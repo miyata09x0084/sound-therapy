@@ -8,20 +8,14 @@
     color: white;
     font-weight: 550;
     font-size: 2.2em;
-    // letter-spacing: -0.01em;
-    // background-color: red;
     padding-bottom: 15px;
-    // margin-bottom: 20px;
   }
   .jackets {
     width: 100%;
-    // height: 100vh;
-    // padding: 0 80px 80px 80px;
     color: rgb(230, 230, 230);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    // background-color: yellowgreen;
     &__image {
       padding: 20px;
       margin-bottom: 20px;
@@ -35,23 +29,19 @@
         letter-spacing: 0.08em;
         margin-top: 10px;
         overflow:hidden;
-        // background-color: green;
       }
       &__existing {
         img {
           width: 136px;
           height: 136px;
           background: rgb(151, 152, 153);
-          // border-radius: 10px;
         }
       }
       &__nothing {
         width: 136px;
         height: 136px;
-        // background: radial-gradient(rgb(0,174,204), rgb(0, 202, 238));
         background: rgb(137, 138, 139);
         text-align: center;
-        // border-radius: 20px;
         i {
           padding-top: 40px;
           font-size: 3.0em;

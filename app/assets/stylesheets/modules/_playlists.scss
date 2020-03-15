@@ -9,14 +9,12 @@
     display: flex;
     justify-content: start; 
     padding-bottom: 16px;
-    // background-color: green;
     &__existing {
       margin-right: 16px;
       img {
         width: 240px;
         height: 240px;
         background: rgb(137, 138, 139);
-        // border-radius: 10px;
       }
     }
     &__nothing {
@@ -25,7 +23,6 @@
       background: rgb(137, 138, 139);
       text-align: center;
       margin-right: 16px;
-      // border-radius: 20px;
       i {
         padding-top: 70px;
         font-size: 5.0em;
@@ -39,7 +36,6 @@
         font-weight: 550;
         letter-spacing: 0.02em;
         margin-bottom: 10px;
-        // background-color: red;
       }
       &__userName {
         font-size: 1em;
@@ -47,7 +43,6 @@
         color: rgb(211, 211, 211);
         letter-spacing: 0.06em;
         text-decoration: none;
-        // background-color: gray;
       }
       a {
         color: rgb(241,237,234);
@@ -66,7 +61,6 @@
     height: 100vh;
     overflow: scroll;
     letter-spacing: 0.06em;
-    // background-color: yellowgreen;
     &__name {
       display: flex;
       justify-content: start;
@@ -78,24 +72,20 @@
       border-bottom : solid 1px rgb(0, 100, 177);
       &__url {
         width: calc(100%/3);
-        // background-color: gray;
       }
       &__artist {
         width: calc(100%/3);
         margin-left: 20px;
-        // background-color: pink;
       }
       &__title {
         width: calc(100%/3);
         margin-left: 20px;
         margin-right: 20px;
-        // background-color: blue;
       }
     }
     &__delete {
       a {
         color: rgb(241,237,234);
-        // font-weight: 300;
         text-decoration: none;
         
       }
@@ -110,7 +100,6 @@
       justify-content: start;
       border-bottom : solid 1px rgb(0, 100, 177);
       padding: 0.5em;
-      // background-color: red;
       color: white;
       align-items: center;
       &__data {
@@ -122,9 +111,6 @@
         }
         &__url {
           width: calc(100%/3);
-          // white-space: nowrap;
-          // overflow:hidden;
-          // background-color: gray;
           a {
             color: white;
           }
@@ -132,23 +118,16 @@
         &__artist {
           width: calc(100%/3);
           margin-left: 20px;
-          // white-space: nowrap;
-          // overflow:hidden;
-          // background-color: pink;
         }
         &__song {
           width: calc(100%/3);
           margin-left: 20px;
           margin-right: 20px;
-          // white-space: nowrap;
-          // overflow:hidden;
-          // background-color: blue;
         }
       }
       &__delete-user {
         a {
           color: rgb(241,237,234);
-          // font-weight: 300;
           text-decoration: none;
         }
         :hover {
@@ -159,7 +138,6 @@
       &__delete {
         width: 50px;
         margin-left: 20px;
-        // background-color: purple;
       }
     }
   }
@@ -167,7 +145,6 @@
     margin-top: auto;
     &__input {
       width: 100%;
-      // border-top : solid 1px rgb(0, 100, 177);
       margin: 31.5px 0;
       display: flex;
       justify-content: start;

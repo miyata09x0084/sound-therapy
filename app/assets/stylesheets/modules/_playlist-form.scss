@@ -26,14 +26,12 @@
     color: rgb(241,237,234);
     font-weight: 200;
     letter-spacing: 0.02em;
-    // margin-top: 12px;
     margin-bottom: 4px;
   }
   &__input {
     width: 100%;
     line-height: 30px;
     padding: 10px 15px;
-    // margin-bottom: 20px;
     box-sizing: border-box;
     border-radius: 5px;
     border:none;
@@ -43,31 +41,24 @@
     background-color: rgb(178, 195, 207);
     color: rgb(117,117,117);
     font-weight: 350;
-    // margin-top: 10px;
     padding: 30px;
     &__title {
       font-size: 1.1em;
-      // letter-spacing: 0.02em;
-      // text-align: center;  
       margin-bottom: 12px;
     }
     &__inner {
-      // background-color: green;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       margin-bottom: 4px;
       &__box {
         text-align: center; 
-        // letter-spacing: 0.06em;
         &__face {
           font-size: 1.6em;
           opacity: 0.7;
-          // background-color: yellowgreen;
         }  
         &__name {
           font-size: 1em;
-          // background-color: gray;
         }
       }
     }
