@@ -1,3 +1,4 @@
 # Ignore uploaded files in development
  /public/uploads/
  /tmp/
+ /.bundle/
