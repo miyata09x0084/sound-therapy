@@ -1,0 +1,42 @@
+.top
+  .left-side
+    %h1.left-side__serviceName
+      = link_to root_path, class: "left-side__serviceName__content" do
+        = icon('fas','adjust')
+        .left-side__serviceName__content__name
+          MusicTherapy
+  .right-side
+    .right-side__uer
+      - if user_signed_in?
+        = link_to destroy_user_session_path, method: :delete, class: "right-side__user--btn" do
+          Logout
+      - else
+        = link_to new_user_registration_path, class: "right-side__user--btn" do
+          Sign up
+        = link_to new_user_session_path, class: "right-side__user--btn" do
+          Login
+.wrapper
+  .main-result
+    .result
+      .result__pi-chart
+        %h2.result__pi-chart__mood
+          Your Feelings
+        %h2.result__pi-chart__week
+          Weekly Average
+        .result__pi-chart__visual  
+          %canvas#myChartWeek{:height => "100", :width => "400"}
+          :javascript
+            if (gon.chartData_week) {
+              draw_graphWeek()
+            } else {
+            };
+        %h2.result__pi-chart__month
+          Monthly Average
+        .result__pi-chart__visual  
+          %canvas#myChartMonth{:height => "100", :width => "400"}
+            :javascript
+              if (gon.chartData_month) {
+                draw_graphMonth()
+              } else {
+              };
+            

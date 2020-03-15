@@ -1,0 +1,63 @@
+.wrapper-api {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(24,46,96);
+  padding: 60px;
+}
+
+.api-form {
+  width: 980px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: rgb(0,105,183);
+  border-radius: 5px;
+  box-sizing: border-box;
+  &__title {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__url{
+    color: rgb(241,237,234);
+    font-weight: 200;
+    letter-spacing: 0.02em;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    i {
+      font-size: 1.8em;
+    }
+    &__title {
+      margin-left: 4px;
+    }
+    &__input {
+      // float: left;
+      width: 100%;
+      line-height: 30px;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border:none;
+    }
+    &__action-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      color: #fff;
+      letter-spacing: 0.15em;
+      background-color: rgb(0,174,204);
+      border: 0;
+      border-radius: 20px;
+    }
+  }
+  &__emotion-map {
+    width: 100%;
+    height: 100vh;
+    .map {
+      background-color: red;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.main-content
+  .main-content__user-name
+    .main-content__user-name__content
+    = icon('fas','smile')
+    = current_user.name
+    ,Welcome.
+  .main-content__service
+    .main-content__service__music
+      = link_to playlists_path do
+        = icon('fas','headphones')
+        %h2.main-content__service__music__name
+          How are you feeling?
+    .main-content__service__bio
+      = link_to new_emotion_path do
+        = icon('fas','heart')
+        %h2.main-content__service__bio__name
+          Feeling Recorder

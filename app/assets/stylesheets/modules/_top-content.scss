@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Yu Gothic", YuGothic, sans-serif;
+}
+
+.wrapper {
+ width: 100%;
+ height: 100vh;
+ background-image: url("/images/My-Gif-Water-Effect-watereffect-com-1407802055.gif");
+ background-size: cover;
+}
+
+.main-content {
+  width: 100%;
+  height: 100vh;
+  background-color :(rgba(0,105,183,0.3)); 
+  // background: radial-gradient(rgba(0,105,183,0.05), rgba(0, 117, 207,0.05)); 
+  padding: 57.5px 230px;
+  letter-spacing: 0.02em;
+  font-size: 24px;
+  &__user-name {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 8px 8px 8px 10px;
+    border-radius: 22px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  &__service {
+    display: flex;
+    // background-color: red;
+    &__music {
+      width: 100%;
+      height: 100px;
+      position: relative;
+      z-index: 1;
+      background: rgb(0,174,204);
+      border-radius: 20px;
+      margin-right: 20px;
+      // padding: 20px;
+      a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // text-indent:-999px;
+        z-index: 2;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        // background-color: green;
+        i {
+          font-size: 1.2em;
+          margin-right: 12px;
+        }
+        h2 {
+          font-weight: 500;
+          // font-size: 28px;
+        }
+      } 
+    }
+    &__bio {
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      background: rgb(0,174,204);
+      border-radius: 20px;
+      a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // text-indent:-999px;
+        z-index: 2;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        // margin: 0 auto;
+        // background-color: green;
+        i {
+          font-size: 1.2em;
+          margin-right: 12px;
+        }
+        h2 {
+          font-weight: 500;
+          // font-size: 28px;
+        }
+      }   
+    }
+    :hover {
+      background-color: rgb(0, 195, 230);
+      border-radius: 20px;
+    } 
+  }
+}

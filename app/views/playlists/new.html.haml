@@ -1,0 +1,88 @@
+.wrapper-playlist
+  .playlist-form
+    .playlist-form__title
+      = current_user.name
+      , How are you feeling?
+    =form_for @playlist do |f|
+      .playlist-form__name
+        Name  
+      = f.text_field :name, class: "playlist-form__input", placeholder: "Relaxed, Excited, Stressed, ..."
+      .playlist-form__map
+        .playlist-form__map__title
+          Please use Names as a reference.
+        .playlist-form__map__inner
+          .playlist-form__map__inner__box
+            .playlist-form__map__inner__box__face
+              &#x1f601;
+            .playlist-form__map__inner__box__name
+              Ecstatic
+          .playlist-form__map__inner__box
+            .playlist-form__map__inner__box__face
+              &#x1f600;
+            .playlist-form__map__inner__box__name
+              Happy
+          .playlist-form__map__inner__box
+            .playlist-form__map__inner__box__face
+              &#x1f60b;
+            .playlist-form__map__inner__box__name
+              Excited
+          .playlist-form__map__inner__box
+            .playlist-form__map__inner__box__face
+              &#x1f60d;
+            .playlist-form__map__inner__box__name
+              Gratrul
+          .playlist-form__map__inner__box
+            .playlist-form__map__inner__box__face
+              &#x1f60c;
+            .playlist-form__map__inner__box__name
+              Relaxed
+          .playlist-form__map__inner__box
+            .playlist-form__map__inner__box__face
+              &#x1f642;
+            .playlist-form__map__inner__box__name
+              Content
+          .playlist-form__map__inner__box
+            .playlist-form__map__inner__box__face
+              &#x1f615;
+            .playlist-form__map__inner__box__name
+              Unsure
+          .playlist-form__map__inner__box
+            .playlist-form__map__inner__box__face
+              &#x1f610;
+            .playlist-form__map__inner__box__name
+              Bored
+          .playlist-form__map__inner__box
+            .playlist-form__map__inner__box__face
+              &#x1f62c;
+            .playlist-form__map__inner__box__name
+              Anxious
+          .playlist-form__map__inner__box
+            .playlist-form__map__inner__box__face
+              &#x1f624;
+            .playlist-form__map__inner__box__name
+              Angry
+          .playlist-form__map__inner__box
+            .playlist-form__map__inner__box__face
+              &#x1f623;
+            .playlist-form__map__inner__box__name
+              Stressed
+          .playlist-form__map__inner__box
+            .playlist-form__map__inner__box__face
+              &#x1f614;
+            .playlist-form__map__inner__box__name
+              Sad
+        .playlist-form__map__dots
+          ・
+        .playlist-form__map__dots
+          ・
+        .playlist-form__map__dots
+          ・
+      .playlist-form__mask
+        Choose image
+      = f.label :image, class: 'playlist-form__image' do
+        = icon('fas', 'image', class: 'icon')
+        = f.file_field :image, class: 'hidden'
+      .playlist-form__create
+      = f.submit "CREATE", class: "playlist-form__create__action-btn"
+      
+      

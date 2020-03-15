@@ -1,0 +1,74 @@
+.wrapper-music
+  .side-menu
+    .side-menu__serviceName
+      = link_to root_path do
+        = icon('fas','adjust')
+        %h1.side-menu__serviceName__content__title
+          SoundTherapy
+    .side-menu__home
+      = link_to playlists_path do
+        = icon('fas','home')
+        %h1.side-menu__home__title
+          Home
+    .side-menu__feeling
+      MY MOODS
+    .side-menu__playlist
+      - current_user.playlists.each do |playlist|
+        .list
+          = link_to playlist_adds_path(playlist) do
+            .list__name
+              = playlist.name
+    %h2.side-menu__newPlaylist
+      = link_to new_playlist_path do
+        = icon('fas','smile')
+        %h1.side-menu__newPlaylist__title
+        New Playlist
+  .main
+    .main__header
+      - if @playlist.image.present?
+        .main__header__existing
+          = image_tag @playlist.image.url
+      - else
+        .main__header__nothing
+          = icon('fas','music')
+      .main__header__info
+        %h2.main__header__info__listName
+          = @playlist.name
+        %h2.main__header__info__userName
+          Created by : 
+          = @playlist.user.name
+        - if current_user.id == @playlist.user_id
+          = link_to edit_playlist_path(@playlist) do
+            = icon('fas','edit')
+    .main__content
+      .main__content__name
+        .main__content__name__url
+          URL
+        .main__content__name__artist
+          ARTIST
+        .main__content__name__title
+          TITLE
+      - @adds.each do |add|
+        .main__content__info
+          .main__content__info__data
+            = icon('fas','music')
+            .main__content__info__data__url
+              = Rinku.auto_link(add.url, :all, 'target="_blank"').html_safe
+            .main__content__info__data__artist
+              = add.artist
+            .main__content__info__data__song  
+              = add.song
+          - if current_user.id == @playlist.user_id
+            .main__content__info__delete-user
+              = link_to 'Delete', playlist_add_path(@playlist, add), method: :delete
+          - else
+            .main__content__info__delete
+    - if current_user.id == @playlist.user_id
+      .add
+        =form_for [@playlist, @add] do |f|
+          .add__input
+            .add__input__box
+              = f.text_field :url, class: "add__input__box__url", placeholder: "URL for song"
+              = f.text_field :artist, class: "add__input__box__artist", placeholder: "artist name"
+              = f.text_field :song, class: "add__input__box__song", placeholder: "song name"
+            = f.submit "ADD", class: "add__input__action-btn"

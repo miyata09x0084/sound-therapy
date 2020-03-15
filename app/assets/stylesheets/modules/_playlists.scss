@@ -1,0 +1,217 @@
+.main {
+  width: 100%;
+  height: 100vh;
+  background:radial-gradient(farthest-side circle at center top, rgb(45, 86, 180),rgb(28, 54, 114));
+  padding: 60px 60px 0 60px;
+  display: flex;
+  flex-direction: column;
+  &__header {
+    display: flex;
+    justify-content: start; 
+    padding-bottom: 16px;
+    // background-color: green;
+    &__existing {
+      margin-right: 16px;
+      img {
+        width: 240px;
+        height: 240px;
+        background: rgb(137, 138, 139);
+        // border-radius: 10px;
+      }
+    }
+    &__nothing {
+      width: 240px;
+      height: 240px;
+      background: rgb(137, 138, 139);
+      text-align: center;
+      margin-right: 16px;
+      // border-radius: 20px;
+      i {
+        padding-top: 70px;
+        font-size: 5.0em;
+        color: rgb(164, 166, 168);
+      }
+    }
+    &__info {
+      &__listName {
+        color: white;
+        font-size: 4.4em;
+        font-weight: 550;
+        letter-spacing: 0.02em;
+        margin-bottom: 10px;
+        // background-color: red;
+      }
+      &__userName {
+        font-size: 1em;
+        font-weight: 200;
+        color: rgb(211, 211, 211);
+        letter-spacing: 0.06em;
+        text-decoration: none;
+        // background-color: gray;
+      }
+      a {
+        color: rgb(241,237,234);
+        i {
+          font-size: 1.4em;
+          margin-top: 12px;
+        }
+        :hover {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+  &__content {
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+    letter-spacing: 0.06em;
+    // background-color: yellowgreen;
+    &__name {
+      display: flex;
+      justify-content: start;
+      color: rgb(211, 211, 211);
+      padding: 0.5em 4.6em 0.5em 2.6em;
+      font-size: 0.8em;
+      font-weight: 200;
+      letter-spacing: 0.18em;
+      border-bottom : solid 1px rgb(0, 100, 177);
+      &__url {
+        width: calc(100%/3);
+        // background-color: gray;
+      }
+      &__artist {
+        width: calc(100%/3);
+        margin-left: 20px;
+        // background-color: pink;
+      }
+      &__title {
+        width: calc(100%/3);
+        margin-left: 20px;
+        margin-right: 20px;
+        // background-color: blue;
+      }
+    }
+    &__delete {
+      a {
+        color: rgb(241,237,234);
+        // font-weight: 300;
+        text-decoration: none;
+        
+      }
+      :hover {
+        border-bottom: 1px solid rgb(241,237,234);
+        padding-bottom: 1px;
+      }
+    }
+    &__info {
+      width: 100%;
+      display: flex;
+      justify-content: start;
+      border-bottom : solid 1px rgb(0, 100, 177);
+      padding: 0.5em;
+      // background-color: red;
+      color: white;
+      align-items: center;
+      &__data {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        i {
+          margin-right: 10px;
+        }
+        &__url {
+          width: calc(100%/3);
+          // white-space: nowrap;
+          // overflow:hidden;
+          // background-color: gray;
+          a {
+            color: white;
+          }
+        }
+        &__artist {
+          width: calc(100%/3);
+          margin-left: 20px;
+          // white-space: nowrap;
+          // overflow:hidden;
+          // background-color: pink;
+        }
+        &__song {
+          width: calc(100%/3);
+          margin-left: 20px;
+          margin-right: 20px;
+          // white-space: nowrap;
+          // overflow:hidden;
+          // background-color: blue;
+        }
+      }
+      &__delete-user {
+        a {
+          color: rgb(241,237,234);
+          // font-weight: 300;
+          text-decoration: none;
+        }
+        :hover {
+          border-bottom: 1px solid rgb(241,237,234);
+          padding-bottom: 1px;
+        }
+      }
+      &__delete {
+        width: 50px;
+        margin-left: 20px;
+        // background-color: purple;
+      }
+    }
+  }
+  .add {
+    margin-top: auto;
+    &__input {
+      width: 100%;
+      // border-top : solid 1px rgb(0, 100, 177);
+      margin: 31.5px 0;
+      display: flex;
+      justify-content: start;
+      &__box {
+        display: flex;
+        justify-content: start;
+        width: 100%; 
+        &__url {
+          width: calc(100%/3); 
+          line-height: 20px;
+          padding: 10px 15px;
+          box-sizing: border-box;
+          border-radius: 5px;
+          border:none;
+          margin-right: 5px;
+        }
+        &__artist {
+          width: calc(100%/3); 
+          line-height: 20px;
+          padding: 10px 15px;
+          box-sizing: border-box;
+          border-radius: 5px;
+          border:none;
+          margin-right: 5px;
+        }
+        &__song {
+          width: calc(100%/3); 
+          line-height: 20px;
+          padding: 10px 15px;
+          box-sizing: border-box;
+          border-radius: 5px;
+          border:none;
+        }
+      }
+      &__action-btn {
+        width: 100px;
+        padding: 11px 25px;
+        color: #fff;
+        letter-spacing: 0.15em;
+        background-color: rgb(0,174,204);
+        border: 0;
+        border-radius: 1px;
+        margin-left: 5px;
+      }
+    }
+  }
+}

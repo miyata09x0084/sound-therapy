@@ -1,0 +1,53 @@
+Arguments: 
+  /Users/miyata_ryo/.nodebrew/node/v12.16.0/bin/node /usr/local/Cellar/yarn/1.22.0/libexec/bin/yarn.js install
+
+PATH: 
+  /Users/miyata_ryo/opt/anaconda3/bin:/Users/miyata_ryo/.rbenv/shims:/usr/local/opt/mysql@5.6/bin:/Users/miyata_ryo/.nodebrew/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.0
+
+Node version: 
+  12.16.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/miyata_ryo/projects/sound-therapy/package.json: Unexpected token { in JSON at position 378
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.22.0/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.0/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.0/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "sound-therapy",
+    "version": "1.0.0",
+    "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+    "main": "index.js",
+    "directories": {
+      "lib": "lib",
+      "test": "test"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+  
+    {
+      "name": "chart_js_sample",
+      "private": true,
+      "dependencies": {
+        "chart.js": "^2.7.1" 
+      }
+    },
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

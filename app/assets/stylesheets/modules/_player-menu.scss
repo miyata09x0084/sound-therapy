@@ -1,0 +1,111 @@
+.wrapper-music {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  .side-menu {
+    width: 234px;
+    background-color: rgb(24,46,96);
+    display: flex;
+    flex-direction: column;
+    &__serviceName {
+      padding: 24px;
+      font-size: 25.5px;
+      font-weight: 600;
+      letter-spacing: -0.07em;
+      a {
+        text-decoration: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        i {
+          font-size: 40px;
+          margin-right: 6px;
+        }
+        &__title {
+        }
+      }
+    }
+    &__home {
+      padding: 0  24px 16px 24px;
+      font-weight: 450;
+      letter-spacing: 0.05em;
+      // background-color: red;
+      :hover {
+        background-color: rgb(0,105,183);  
+        color: white;
+      }
+      a {
+        text-decoration: none;
+        color: rgb(211, 211, 211);
+        display: flex;
+        align-items: center;
+        i {
+          font-size: 1.3em;
+          margin-right: 8px;
+        }
+      }
+    }  
+    // &__search {
+    //   // background-color: green;  
+    //   padding-bottom: 28px;
+    //   font-weight: 450;
+    //   letter-spacing: 0.05em;
+    // }
+    &__feeling {
+      font-size: 0.78em;
+      font-weight: 200;
+      color: rgb(211, 211, 211);
+      letter-spacing: 0.18em;
+      padding: 0  24px;
+      // padding: 8px 8px 0 8px;
+    }
+    &__playlist {
+      // background-color: red;  
+      // margin-left: 10px;
+      width: 100%;
+      height: 100vh;
+      overflow: scroll;
+      margin-top: 6px;
+      padding: 0  24px 16px 24px;
+      font-weight: 250;
+      letter-spacing: 0.1em; 
+      .list {
+        margin-bottom: 14px;
+        a {
+          text-decoration: none;
+          color: rgb(211, 211, 211);
+          :hover {
+            background-color: rgb(0,105,183);
+            color: white;
+          }
+        }
+      }
+    }
+    &__newPlaylist {
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      border-top : solid 1px rgb(0, 74, 131);
+      padding-top: 44px;
+      padding-bottom: 40px;
+      margin-top: auto;
+      // background-color: green;
+      a {
+        text-decoration: none;
+        color: rgb(211, 211, 211);
+        display: flex;
+        align-items: center;
+        margin: 0 24px;
+        // background-color: red;
+        i {
+          font-size: 1.3em;
+          margin-right: 8px;
+        }
+      }
+      :hover {
+        background-color: rgb(0, 96, 170);  
+        color: white;
+      }
+    }
+  }
+  
+}
