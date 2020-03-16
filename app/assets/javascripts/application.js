@@ -17,5 +17,3 @@
 
 //= require chartkick
 //= require Chart.bundle
-
-//= require audiojs
