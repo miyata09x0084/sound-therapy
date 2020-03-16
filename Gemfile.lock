@@ -41,6 +41,8 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     arel (7.1.4)
+    audiojs-rails (1.0.1)
+      railties (>= 3.1)
     bcrypt (3.1.13)
     bindex (0.8.1)
     builder (3.2.4)
@@ -227,6 +229,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  audiojs-rails
   byebug
   carrierwave
   chart-js-rails (~> 0.1.4)
