@@ -9,7 +9,6 @@ class EmotionsController < ApplicationController
     @neutralWeek = Emotion.where("updated_at": 1.week.ago.beginning_of_day..Time.zone.now.end_of_day, "user_id": current_user.id).pluck(:neutral)
     @sadnessWeek = Emotion.where("updated_at": 1.week.ago.beginning_of_day..Time.zone.now.end_of_day, "user_id": current_user.id).pluck(:sadness)
     @surpriseWeek = Emotion.where("updated_at": 1.week.ago.beginning_of_day..Time.zone.now.end_of_day, "user_id": current_user.id).pluck(:surprise)
-
     @angerWeek_ave = @angerWeek.inject(:+) / @angerWeek.length
     @contemptWeek_ave = @contemptWeek.inject(:+) / @contemptWeek.length
     @disgustWeek_ave = @disgustWeek.inject(:+) / @disgustWeek.length
@@ -18,11 +17,8 @@ class EmotionsController < ApplicationController
     @neutralWeek_ave = @neutralWeek.inject(:+) / @neutralWeek.length
     @sadnessWeek_ave = @sadnessWeek.inject(:+) / @sadnessWeek.length
     @surpriseWeek_ave = @surpriseWeek.inject(:+) / @surpriseWeek.length
-
     @chartData_week = [@angerWeek_ave, @contemptWeek_ave, @disgustWeek_ave, @fearWeek_ave, @happinesstWeek_ave, @neutralWeek_ave, @sadnessWeek_ave, @surpriseWeek_ave]
     gon.chartData_week = @chartData_week
-
-
 
     @angerMonth = Emotion.where("updated_at": 1.month.ago.beginning_of_day..Time.zone.now.end_of_day, "user_id": current_user.id).pluck(:anger)
     @contemptMonth = Emotion.where("updated_at": 1.month.ago.beginning_of_day..Time.zone.now.end_of_day, "user_id": current_user.id).pluck(:contempt)
@@ -32,7 +28,6 @@ class EmotionsController < ApplicationController
     @neutralMonth = Emotion.where("updated_at": 1.month.ago.beginning_of_day..Time.zone.now.end_of_day, "user_id": current_user.id).pluck(:neutral)
     @sadnessMonth = Emotion.where("updated_at": 1.month.ago.beginning_of_day..Time.zone.now.end_of_day, "user_id": current_user.id).pluck(:sadness)
     @surpriseMonth = Emotion.where("updated_at": 1.month.ago.beginning_of_day..Time.zone.now.end_of_day, "user_id": current_user.id).pluck(:surprise)
-    
     @angerMonth_ave = @angerMonth.inject(:+) / @angerMonth.length
     @contemptMonth_ave = @contemptMonth.inject(:+) / @contemptMonth.length
     @disgustMonth_ave = @disgustMonth.inject(:+) / @disgustMonth.length
@@ -41,7 +36,6 @@ class EmotionsController < ApplicationController
     @neutralMonth_ave = @neutralMonth.inject(:+) / @neutralMonth.length
     @sadnessMonth_ave = @sadnessMonth.inject(:+) / @sadnessMonth.length
     @surpriseMonth_ave = @surpriseMonth.inject(:+) / @surpriseMonth.length
-
     @chartData_month = [@angerMonth_ave, @contemptMonth_ave, @disgustMonth_ave, @fearMonth_ave, @happinesstMonth_ave, @neutralMonth_ave, @sadnessMonth_ave, @surpriseMonth_ave]
     gon.chartData_month = @chartData_month
   end
@@ -84,7 +78,8 @@ class EmotionsController < ApplicationController
     end
     
     res = JSON.parse(response.body)
-    
+    # binding.pry
+
     if res[0].present?
       emoData = res[0]["faceAttributes"]["emotion"]
       @anger = emoData["anger"]
@@ -98,8 +93,8 @@ class EmotionsController < ApplicationController
       @emotion = Emotion.create!(anger: @anger, contempt: @contempt, disgust: @disgust, fear: @fear, happiness: @happiness, neutral: @neutral, sadness: @sadness, surprise: @surprise, user_id: current_user.id)
       redirect_to emotion_path(@emotion.id), notice: "Analyzed Successfully."
     else
-      flash.now[:alert] = "Enter a url for face"
-      redirect_to new_emotion_path
+      flash.now[:alert] = "You need to enter a url for face."
+      render new_emotion_path
     end
   end
 
