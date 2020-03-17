@@ -10,7 +10,7 @@ class AddsController < ApplicationController
     @add = @playlist.adds.new(add_params)
     
     if @add.save!
-      redirect_to playlist_adds_path(@playlist), notice: "Added Successfully."
+      redirect_to playlist_adds_path(@playlist), notice: "Added successfully."
     else
       @adds = @playlist.adds.includes(:user)
       flash.now[:alert] = "You need to enter a url for song."
