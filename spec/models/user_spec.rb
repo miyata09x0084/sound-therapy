@@ -1,6 +1,7 @@
 require 'rails_helper' 
+
 describe User do
-  describe '#create' do
+  describe '#create', type: :model do
 
     it "is invalid without a name, email, password, password_confirmation" do
       user = build(:user)
