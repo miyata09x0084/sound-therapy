@@ -1,6 +1,6 @@
 class PlaylistsController < ApplicationController
   def index
-    @playlists = Playlist.all.order(id: "DESC")
+    @playlists = Playlist.all.order("created_at DESC")
   end
 
   def new
