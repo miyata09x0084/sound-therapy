@@ -1,20 +1,22 @@
 require 'rails_helper'
 
-describe PlaylistsController do
+describe AddsController do
+  let(:playlist) { create(:playlist) }
   let(:user) { create(:user) }
 
   describe '#index' do
-
     context 'log in' do
       before do
         login user
-        get :index
+        get :index, params: { playlist_id: playlist.id }
       end
 
-      it "populates an array of playlists ordered by created_at DESC" do 
-        playlists = create_list(:playlist, 3)
-        get :index
-        expect(assigns(:playlists)).to match(playlists.sort{|a, b| b.created_at <=> a.created_at })
+      it 'assigns @add' do
+        expect(assigns(:add)).to be_a_new(Add)
+      end
+
+      it 'assigns @playlist' do
+        expect(assigns(:playlist)).to eq playlist
       end
 
       it 'redners index' do
@@ -24,7 +26,7 @@ describe PlaylistsController do
 
     context 'not log in' do
       before do
-        get :index
+        get :index, params: { playlist_id: playlist.id }
       end
 
       it 'redirects to new_user_session_path' do
@@ -34,7 +36,7 @@ describe PlaylistsController do
   end
 
   describe '#create' do
-    let(:params) { { user_id: user.id, playlist: attributes_for(:playlist) } }
+    let(:params) { { playlist_id: playlist.id, user_id: user.id, add: attributes_for(:add) } }
 
     context 'log in' do
       before do
@@ -47,18 +49,18 @@ describe PlaylistsController do
           params: params
         }
 
-        it 'count up playlist' do
-          expect{ subject }.to change(Playlist, :count).by(1)
+        it 'count up add' do
+          expect{ subject }.to change(Add, :count).by(1)
         end
 
         it 'redirects to playlist_adds_path' do
           subject
-          # expect(response).to redirect_to(playlist_adds_path(playlist))
+          expect(response).to redirect_to(playlist_adds_path(playlist))
         end
       end
 
       context 'can not save' do
-        let(:invalid_params) { { user_id: user.id, playlist: attributes_for(:playlist, name: nil, image: nil) } }
+        let(:invalid_params) { { playlist_id: playlist.id, user_id: user.id, add: attributes_for(:add, url: nil, artist: nil, song: nil) } }
 
         subject {
           post :create,
@@ -66,19 +68,19 @@ describe PlaylistsController do
         }
 
         it 'does not count up' do
-          expect{ subject }.not_to change(Playlist, :count)
+          expect{ subject }.not_to change(Add, :count)
         end
 
         it 'renders index' do
           subject
-          expect(response).to render_template :new
+          expect(response).to redirect_to(playlist_adds_path(playlist))
         end
       end
     end
 
     context 'not log in' do
       before do
-        get :index
+        get :create, params: params
       end
 
       it 'redirects to new_user_session_path' do
@@ -88,4 +90,3 @@ describe PlaylistsController do
     end
   end
 end
-

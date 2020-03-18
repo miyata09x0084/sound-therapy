@@ -9,12 +9,12 @@ class AddsController < ApplicationController
   def create
     @add = @playlist.adds.new(add_params)
     
-    if @add.save!
+    if @add.save
       redirect_to playlist_adds_path(@playlist), notice: "Added successfully."
     else
       @adds = @playlist.adds.includes(:user)
       flash.now[:alert] = "You need to enter a url for song."
-      render :create
+      redirect_to playlist_adds_path(@playlist)
     end
   end
 
