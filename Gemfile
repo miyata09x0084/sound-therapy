@@ -79,3 +79,7 @@ gem 'gon', '~> 6.2.0'
 gem 'rinku'
 
 gem 'rename'
+
+group :production do
+  gem 'unicorn', '5.4.1' 
+end
