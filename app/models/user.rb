@@ -5,4 +5,6 @@ class User < ApplicationRecord
   has_many :emotions
   has_many :playlists
   has_many :adds
+
+  validates :name, presence: true
 end

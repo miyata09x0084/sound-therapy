@@ -1,6 +1,6 @@
 class PlaylistsController < ApplicationController
   def index
-    @playlists = Playlist.all.order(id: "DESC")
+    @playlists = Playlist.all.order("created_at DESC")
   end
 
   def new
@@ -10,7 +10,7 @@ class PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.new(playlist_params)
     if @playlist.save
-      redirect_to playlist_adds_path(@playlist), notice: "Created Successfully."
+      redirect_to playlist_adds_path(@playlist), notice: "Created successfully."
     else
       flash.now[:alert] = "You need to enter Name."
       render :new

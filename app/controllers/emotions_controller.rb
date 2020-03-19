@@ -91,7 +91,7 @@ class EmotionsController < ApplicationController
       @sadness = emoData["sadness"]
       @surprise = emoData["surprise"]
       @emotion = Emotion.create!(anger: @anger, contempt: @contempt, disgust: @disgust, fear: @fear, happiness: @happiness, neutral: @neutral, sadness: @sadness, surprise: @surprise, user_id: current_user.id)
-      redirect_to emotion_path(@emotion.id), notice: "Analyzed Successfully."
+      redirect_to emotion_path(@emotion.id), notice: "Analyzed successfully."
     else
       flash.now[:alert] = "You need to enter a url for face."
       render new_emotion_path
