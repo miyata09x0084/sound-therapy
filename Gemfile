@@ -80,6 +80,8 @@ gem 'rinku'
 
 gem 'rename'
 
+gem 'rubocop-faker'
+
 group :production do
   gem 'unicorn', '5.4.1' 
 end
