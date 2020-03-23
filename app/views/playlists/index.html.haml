@@ -38,5 +38,18 @@
                 = icon('fas','music')
           .jackets__image__info
             = playlist.name
-  
+    .title
+      Recintly added
+    .jackets
+      - @playlists.each do |playlist|
+        .jackets__image
+          = link_to playlist_adds_path(playlist) do
+            - if playlist.image.present?
+              .jackets__image__existing
+                = image_tag playlist.image.url 
+            -else
+              .jackets__image__nothing
+                = icon('fas','music')
+          .jackets__image__info
+            = playlist.name
         
