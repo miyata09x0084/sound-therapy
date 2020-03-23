@@ -1,5 +1,6 @@
 class PlaylistsController < ApplicationController
   def index
+    @playlist = Playlist.new
     @playlists = Playlist.all.order("created_at DESC")
   end
 
