@@ -13,7 +13,7 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: sound_therapy
+  username: root
   password: <%= ENV['sound_therapy_DATABASE_PASSWORD'] %>
   host: db   #変更(docker-compose.ymlのservice名を記載)
 
@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: sound_therapy_production
-  username: sound_therapy
+  username: root
   password: <%= ENV['sound_therapy_DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
