@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: password
+  password: <%= ENV['sound_therapy_DATABASE_PASSWORD'] %>
   host: localhost   #変更(docker-compose.ymlのservice名を記載)
 
 development:
