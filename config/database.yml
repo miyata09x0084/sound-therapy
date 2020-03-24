@@ -15,7 +15,7 @@ default: &default
   pool: 5
   username: root
   password: <%= ENV['sound_therapy_DATABASE_PASSWORD'] %>
-  host: db   #変更(docker-compose.ymlのservice名を記載)
+  host: localhost   #変更(docker-compose.ymlのservice名を記載)
 
 development:
   <<: *default
