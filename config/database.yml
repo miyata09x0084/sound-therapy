@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: sound_therapy_production
-  username: root
+  username: sound_therapy
   password: <%= ENV['sound_therapy_DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
