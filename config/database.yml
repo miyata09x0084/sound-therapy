@@ -15,8 +15,8 @@ default: &default
   pool: 5
   username: root
   password: password
-  # host: db   #変更(docker-compose.ymlのservice名を記載)
-  socket: /tmp/mysql.sock
+  host: db   #変更(docker-compose.ymlのservice名を記載)
+  # socket: /tmp/mysql.sock
   
 development:
   <<: *default
@@ -51,6 +51,6 @@ test:
 production:
   <<: *default
   database: sound_therapy_production
-  username: sound_therapy
+  username: root
   password: <%= ENV['sound_therapy_DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
