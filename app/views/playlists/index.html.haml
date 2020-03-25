@@ -29,7 +29,7 @@
       .title
         Shared Feelings And Situations
       %ul.jackets
-        - @playlists.each do |playlist|
+        - @playlists_random.each do |playlist|
           - if current_user.id != playlist.user_id
             %li.jackets__image
               = link_to playlist_adds_path(playlist) do
@@ -45,7 +45,7 @@
       .title
         Recently Added
       %ul.jackets
-        - @playlists_random.each do |playlist|
+        - @playlists.each do |playlist|
           - if current_user.id != playlist.user_id
             %li.jackets__image
               = link_to playlist_adds_path(playlist) do
