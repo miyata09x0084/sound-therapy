@@ -2,6 +2,7 @@ class PlaylistsController < ApplicationController
   def index
     @playlist = Playlist.new
     @playlists = Playlist.all.order("created_at DESC")
+    @playlists_random = Playlist.all.order("RAND()")
   end
 
   def new
