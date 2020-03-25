@@ -1,8 +1,7 @@
 class PlaylistsController < ApplicationController
   def index
     @playlist = Playlist.new
-    @playlistsRan = Playlist.all.order("RAND()")
-    @playlistsDay = Playlist.all.order("created_at DESC")
+    @playlists = Playlist.all.order("created_at DESC")
   end
 
   def new
