@@ -15,7 +15,7 @@ default: &default
   pool: 5
   username: root
   password: password
-  # host: db   #変更(docker-compose.ymlのservice名を記載)
+  host: db   #変更(docker-compose.ymlのservice名を記載)
   socket: /tmp/mysql.sock
   
 development:
