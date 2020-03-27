@@ -61,6 +61,9 @@
       letter-spacing: 0.1em; 
       .list {
         margin-bottom: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         a {
           text-decoration: none;
           color: rgb(211, 211, 211);
