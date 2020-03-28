@@ -99,7 +99,7 @@ class EmotionsController < ApplicationController
   end
 
   private
-  def Biorythms_params 
+  def biorythms_params 
     params.require(:emotion).permit(:image).merge(user_id: current_user.id)
   end
 end
