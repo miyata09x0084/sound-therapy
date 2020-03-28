@@ -8,7 +8,7 @@ WORKDIR /sound-therapy
 ADD Gemfile /sound-therapy/Gemfile
 ADD Gemfile.lock /sound-therapy/Gemfile.lock
 
-ENV BUNDLER_VERSION 2.0.2
+# ENV BUNDLER_VERSION 2.0.0.pre.1
 RUN gem install bundler
 RUN bundle install
 
