@@ -8,7 +8,6 @@ WORKDIR /sound-therapy
 ADD Gemfile /sound-therapy/Gemfile
 ADD Gemfile.lock /sound-therapy/Gemfile.lock
 
-RUN gem install bundler
-RUN bundle install
+RUN gem install bundler && bundle install 
 
 ADD . /sound-therapy
