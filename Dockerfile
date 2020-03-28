@@ -5,6 +5,7 @@ RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 
 WORKDIR /sound-therapy
 
+ENV BUNDLER_VERSION 1.17.3
 ADD Gemfile /sound-therapy/Gemfile
 ADD Gemfile.lock /sound-therapy/Gemfile.lock
 
