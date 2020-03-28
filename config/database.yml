@@ -20,7 +20,7 @@ default: &default
 development:
   <<: *default
   database: sound_therapy_development
-
+  
   username: root
   password: password
   database: docker_development
@@ -32,8 +32,6 @@ development:
 test:
   <<: *default
   database: sound_therapy_test
-
-  
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
