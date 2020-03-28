@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20200304053638) do
 
-  create_table "adds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "adds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "artist"
     t.string   "song"
     t.string   "url"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20200304053638) do
     t.index ["user_id"], name: "index_adds_on_user_id", using: :btree
   end
 
-  create_table "emotions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "emotions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.float    "anger",      limit: 24
     t.float    "contempt",   limit: 24
     t.float    "disgust",    limit: 24
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20200304053638) do
     t.index ["user_id"], name: "index_emotions_on_user_id", using: :btree
   end
 
-  create_table "playlists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "playlists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name",       null: false
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20200304053638) do
     t.index ["user_id"], name: "index_playlists_on_user_id", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name",                                null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
