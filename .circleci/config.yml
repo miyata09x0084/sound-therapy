@@ -1,7 +1,6 @@
 - add_ssh_keys:
   fingerprints:
-    - -----BEGIN RSA PRIVATE KEY-----
-      MIIEpAIBAAKCAQEArLQ5/YKaWpzNrmjKwxX5tav57JmstGuXJ8nkfwG5O+cbz4OfwITR04j4a+oP
+    - MIIEpAIBAAKCAQEArLQ5/YKaWpzNrmjKwxX5tav57JmstGuXJ8nkfwG5O+cbz4OfwITR04j4a+oP
       yxDIBJH/xRW93CW6lmlRNfFO/YThfh/KAxqIF9IHn4H9gvWWfyhyVLWslaEuGieDEDj+a2N41nH/
       XyUiokbJgGWT9P+IT6Jblm9dxIEyHfGQO+m+8BPmf4/cvvRkgA8xOLChn+AIM9iw61PJ2QdiocFb
       WJ7jLJjh7lGIdbcTgxUik8KGSde8dYjwna1heTJHDpRkGBH7aJp+mYbeAl9F7Yg9a87PYHsmsXu4
@@ -22,4 +21,3 @@
       iXKDGacu0uDd8t0AYAarnBoZWtaxodNylnn9bQ3LYyKbHxsCgYBjZwysPkvGBf6SU3SvIaPufLcx
       MIeJiaBajDDlQh1CTScCRSQAAF20eynIRgx1zR8NgyabdGzq+CSj6MLWApCtUkByiRZfK+5g88ld
       EIkwEnKbp1KlIoot1bXcsFJHm/HfROjqcG9xECzLd0Icn6sYL+40/ObzyNI1ZLpGB0fHow==
-      -----END RSA PRIVATE KEY-----
