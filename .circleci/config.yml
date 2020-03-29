@@ -1,4 +1,10 @@
-- add_ssh_keys:
-    fingerprints:
-      - c1:78:16:a7:0f:94:65:1b:35:b8:e1:c9:d8:95:34:17
+version: 2
+jobs:
+  deploy-job:
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "c1:78:16:a7:0f:94:65:1b:35:b8:e1:c9:d8:95:34:17"
+      
 
