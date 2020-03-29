@@ -1,87 +1,25 @@
-# Ruby CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
-version: 2
-jobs:
-  build:
-    docker:
-      # specify the version you desire here
-      # ruby2.5.1を使ったアプリのため
-      - image: circleci/ruby:2.5.1-node-browsers
-        environment:
-#  ①注意！！ bundlerのバージョンが2.0.1以上だと、bundle installに失敗します。ここに環境として指定します。
-          - BUNDLER_VERSION: 2.1.4
-#  ②注意！！ circleCIは仮想環境を構築するので、そのときに使うデータベースを指定する必要があります。
-          - RAILS_ENV: 'test'
-      # Mysqlのバージョン5.6で動かしていたため、5.6を指定
-      - image: circleci/mysql:5.6
-        environment:
-          - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
-          - MYSQL_ROOT_HOST: '%'
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
-    working_directory: ~/repo
-
-    steps:
-      - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run:
-          name: install dependencies
-          command: |
-# ①bundler2.0.1以降のものを使っているのであれば、環境変数と合わせて指定する必要があります。
-            gem install bundler -v 2.1.4
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
-
-      - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-# ②ちょっと無理やりですが、database.ymlとdatabase.yml.ciを入れ替える記述です。
-      - run: mv config/database.yml.ci config/database.yml 
-
-      # Database setup
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
-
-# rubocopを走らせる記述です。
-      - run:
-          name: Rubocop
-          command: bundle exec rubocop
-
-# rspecを走らせる記述です。
-      # run tests!
-      # - run:
-      #     name: run tests
-      #     command: |
-      #       mkdir /tmp/test-results
-      #       TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
-      #         circleci tests split --split-by=timings)"
-
-
-# ③ここでRspecJunitFormatterというgemをインストールしていないとエラーになります。gemfileに記述しましょう。
-            # bundle exec rspec \
-            #   --format progress \
-            #   --format RspecJunitFormatter \
-            #   --out /tmp/test-results/rspec.xml \
-            #   --format progress \
-            #   $TEST_FILES
-
-      # collect reports
-      - store_test_results:
-          path: /tmp/test-results
-      - store_artifacts:
-          path: /tmp/test-results
-          destination: test-results
+add_ssh_keys:
+  fingerprints:
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEpAIBAAKCAQEArLQ5/YKaWpzNrmjKwxX5tav57JmstGuXJ8nkfwG5O+cbz4OfwITR04j4a+oP
+    yxDIBJH/xRW93CW6lmlRNfFO/YThfh/KAxqIF9IHn4H9gvWWfyhyVLWslaEuGieDEDj+a2N41nH/
+    XyUiokbJgGWT9P+IT6Jblm9dxIEyHfGQO+m+8BPmf4/cvvRkgA8xOLChn+AIM9iw61PJ2QdiocFb
+    WJ7jLJjh7lGIdbcTgxUik8KGSde8dYjwna1heTJHDpRkGBH7aJp+mYbeAl9F7Yg9a87PYHsmsXu4
+    7zv7F2WWPYxKj7DfAGV7yHcg2oDSwlkd0tdKay309MZx2Ddyhp2OUQIDAQABAoIBAGT2g8RRmr0I
+    WDHy7z53VWFApb4M5OsgzuAi5iLdthVv+VEqSLU6sJPyyhAEaLE1IUmStKzaFgFiSR9veFuJs7z/
+    9vdNzEJeO1t5nJ1CWBs8SXwTACvHfZqH/LSrjrJoL0xGfbkYMcvEoOevbFNUjte2n1C2wMZEWtPr
+    F4pr0v9CokwEni0lEi6C5qxwjr7eGadFHIDseY69PUvXSrlzjEb0Pts3z0dDqwX3cPJfqBMDkp/0
+    e6uOK1Xi0xWzgjOxDqMSBog6lCjKZ+yzPyGvvLq+KYuVCM6Zl4Hi/ygJPWnJwlIJzzz7pqDW0Ktf
+    a/WsViqJ19B6Mgu2MeBy1Q0gp1UCgYEA7x3sbi0qSPgSj6+xbenMwhkPFVEzlerr+ZArM6T4mvvp
+    RTP1V87IHOhUoFDVgrFg1C+aeTSbfEsIGWh20AGKtcrFIY8Q7ht1BRcJeDJYZ3xRkUCXbHswp0fV
+    ppBOxNyp3vFtNtxODRoUcuPxq1JCmL2Uv4SY5zr/k58qbp+n5vsCgYEAuOXhItK0sb9gwD68GiKo
+    WSBWxEyvchj0sUs6a4GacQ8jCiIaBlFBp9aFP9kMkN2lhm7xntj5HWfRtzhpXBM8num0Fme+17D5
+    gDDdaXid7dOREoVUL64/v8/cgs/1T/OiwxkHOYZr9bQuq/GnddJLj6QhVp0Kz2zXRk7GfEZxziMC
+    gYEAx3fA2Q/YLFK0uSQo8LWOV4Qr7u50B+WWv/Kh90zxDeiC6XW0fnFCwcqVfb6wvXtWeOrVA7L8
+    2ayFrxxTsKT4nzntRFdiGh7ReVOEVL46vOkZ6f9l0drZ9VGZSn8rFlG1awMexhr1CTzuPgEkgnP2
+    lg/f2/uyyYGP3gdykCGjIK0CgYEAs6aAKnKqKO53FjOeVpKIGhkG1TJhYa4Hyl/6wkwqAGIhvI3H
+    1Y2MCoSv8Yp14CfL1aPkVmAhJEYkiS5hiJoUU59lYEOrNS16LujLqNgOMu9WzLUJSE65GCjh66Qd
+    iXKDGacu0uDd8t0AYAarnBoZWtaxodNylnn9bQ3LYyKbHxsCgYBjZwysPkvGBf6SU3SvIaPufLcx
+    MIeJiaBajDDlQh1CTScCRSQAAF20eynIRgx1zR8NgyabdGzq+CSj6MLWApCtUkByiRZfK+5g88ld
+    EIkwEnKbp1KlIoot1bXcsFJHm/HfROjqcG9xECzLd0Icn6sYL+40/ObzyNI1ZLpGB0fHow==
+    -----END RSA PRIVATE KEY-----
