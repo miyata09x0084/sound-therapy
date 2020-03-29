@@ -14,7 +14,7 @@ ADD Gemfile.lock /workdir/Gemfile.lock
 
 # 注意！！ Gemfile.lockにかいてあるbundlerバージョンが2.0.1以降だとエラーが出ます！
 # 僕の場合はここで環境設定してあげれば通りました。
-ENV BUNDLER_VERSION 2.0.2
+ENV BUNDLER_VERSION 2.1.4
 RUN gem install bundler
 RUN bundle install
 
