@@ -1,4 +1,4 @@
-add_ssh_keys:
+- add_ssh_keys:
   fingerprints:
     - "MIIEpAIBAAKCAQEArLQ5/YKaWpzNrmjKwxX5tav57JmstGuXJ8nkfwG5O+cbz4OfwITR04j4a+oP
       yxDIBJH/xRW93CW6lmlRNfFO/YThfh/KAxqIF9IHn4H9gvWWfyhyVLWslaEuGieDEDj+a2N41nH/
