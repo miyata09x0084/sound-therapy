@@ -70,6 +70,9 @@
       font-weight: 200;
       letter-spacing: 0.18em;
       border-bottom : solid 1px rgb(0, 100, 177);
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
       &__url {
         width: calc(100%/3);
       }
