@@ -1,9 +1,11 @@
 .main-content
-  .main-content__user-name
-    .main-content__user-name__content
-    = icon('fas','smile')
-    = current_user.name
-    ,Welcome.
+  - if user_signed_in?
+    .main-content__user-name
+      .main-content__user-name__content
+      = icon('fas','smile')
+      = current_user.name
+      ,Welcome.
+  - else
   .main-content__service
     .main-content__service__music
       = link_to playlists_path do

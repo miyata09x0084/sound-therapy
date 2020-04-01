@@ -37,7 +37,7 @@
         %h2.main__header__info__userName
           Created by : 
           = @playlist.user.name
-        - if current_user.id == @playlist.user_id
+        - if user_signed_in? && current_user.id == @playlist.user_id
           = link_to edit_playlist_path(@playlist) do
             = icon('fas','edit')
     .main__content
@@ -58,12 +58,12 @@
               = add.artist
             .main__content__info__data__song  
               = add.song
-          - if current_user.id == @playlist.user_id
+          - if user_signed_in? &&current_user.id == @playlist.user_id
             .main__content__info__delete-user
               = link_to 'Delete', playlist_add_path(@playlist, add), method: :delete
           - else
             .main__content__info__delete
-    - if current_user.id == @playlist.user_id
+    - if user_signed_in? && current_user.id == @playlist.user_id
       .add
         =form_for [@playlist, @add] do |f|
           .add__input

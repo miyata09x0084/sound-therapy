@@ -48,53 +48,57 @@ class EmotionsController < ApplicationController
   end
 
   def new
-    @emotion = Emotion.new
+      @emotion = Emotion.new
   end
 
   def result
-    require 'net/http'
+    if user_signed_in?
+      require 'net/http'
 
-    # replace <My Endpoint String> in the URL below with the string from your endpoint.
-    uri = URI('https://japaneast.api.cognitive.microsoft.com/face/v1.0/detect')
-    uri.query = URI.encode_www_form({
-        # Request parameters
-        'returnFaceId' => 'true',
-        # 'returnFaceLandmarks' => 'false',
-        'returnFaceAttributes' => 'emotion'
-    })
+      # replace <My Endpoint String> in the URL below with the string from your endpoint.
+      uri = URI('https://japaneast.api.cognitive.microsoft.com/face/v1.0/detect')
+      uri.query = URI.encode_www_form({
+          # Request parameters
+          'returnFaceId' => 'true',
+          # 'returnFaceLandmarks' => 'false',
+          'returnFaceAttributes' => 'emotion'
+      })
 
-    request = Net::HTTP::Post.new(uri.request_uri)
+      request = Net::HTTP::Post.new(uri.request_uri)
 
-    # Request headers
-    # Replace <Subscription Key> with your valid subscription key.
-    request['Ocp-Apim-Subscription-Key'] = '8d4223df7b0d48e69f3cc03263301344'
-    request['Content-Type'] = 'application/json'
-    
-    imageUri = params[:url]
-    request.body = "{\"url\": \"" + imageUri + "\"}"
+      # Request headers
+      # Replace <Subscription Key> with your valid subscription key.
+      request['Ocp-Apim-Subscription-Key'] = '8d4223df7b0d48e69f3cc03263301344'
+      request['Content-Type'] = 'application/json'
+      
+      imageUri = params[:url]
+      request.body = "{\"url\": \"" + imageUri + "\"}"
 
-    response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
-        http.request(request)
-    end
-    
-    res = JSON.parse(response.body)
-    # binding.pry
+      response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+          http.request(request)
+      end
+      
+      res = JSON.parse(response.body)
+      # binding.pry
 
-    if res[0].present?
-      emoData = res[0]["faceAttributes"]["emotion"]
-      @anger = emoData["anger"]
-      @contempt = emoData["contempt"]
-      @disgust = emoData["disgust"]
-      @fear = emoData["fear"]
-      @happiness = emoData["happiness"]
-      @neutral = emoData["neutral"] 
-      @sadness = emoData["sadness"]
-      @surprise = emoData["surprise"]
-      @emotion = Emotion.create!(anger: @anger, contempt: @contempt, disgust: @disgust, fear: @fear, happiness: @happiness, neutral: @neutral, sadness: @sadness, surprise: @surprise, user_id: current_user.id)
-      redirect_to emotion_path(@emotion.id), notice: "Analyzed successfully."
+      if res[0].present?
+        emoData = res[0]["faceAttributes"]["emotion"]
+        @anger = emoData["anger"]
+        @contempt = emoData["contempt"]
+        @disgust = emoData["disgust"]
+        @fear = emoData["fear"]
+        @happiness = emoData["happiness"]
+        @neutral = emoData["neutral"] 
+        @sadness = emoData["sadness"]
+        @surprise = emoData["surprise"]
+        @emotion = Emotion.create!(anger: @anger, contempt: @contempt, disgust: @disgust, fear: @fear, happiness: @happiness, neutral: @neutral, sadness: @sadness, surprise: @surprise, user_id: current_user.id)
+        redirect_to emotion_path(@emotion.id), notice: "Analyzed successfully."
+      else
+        flash.now[:alert] = "You need to enter a url for face."
+        render new_emotion_path
+      end
     else
-      flash.now[:alert] = "You need to enter a url for face."
-      render new_emotion_path
+      redirect_to new_user_session_path, alert: "You need to sign in or sign up before continuing."
     end
   end
 

@@ -14,7 +14,7 @@
       MY LIBRARY
     .side-menu__playlist
       - @playlists.each do |playlist|
-        - if current_user.id == playlist.user_id
+        - if user_signed_in? && current_user.id == playlist.user_id 
           .list
             = link_to playlist_adds_path(playlist) do
               .list__name
@@ -30,39 +30,37 @@
         Shared Feelings And Situations
       %ul.jackets
         - @playlists_random.each do |playlist|
-          - if current_user.id != playlist.user_id
-            %li.jackets__image
-              = link_to playlist_adds_path(playlist) do
-                - if playlist.image.present?
-                  .jackets__image__existing 
-                    = image_tag playlist.image.url 
-                -else
-                  .jackets__image__nothing
-                    = icon('fas','music')
-              .jackets__image__info
-                = playlist.name
+          %li.jackets__image
+            = link_to playlist_adds_path(playlist) do
+              - if playlist.image.present?
+                .jackets__image__existing 
+                  = image_tag playlist.image.url 
+              -else
+                .jackets__image__nothing
+                  = icon('fas','music')
+            .jackets__image__info
+              = playlist.name
     .playlist__content
       .title
         Recently Added
       %ul.jackets
         - @playlists.each do |playlist|
-          - if current_user.id != playlist.user_id
-            %li.jackets__image
-              = link_to playlist_adds_path(playlist) do
-                - if playlist.image.present?
-                  .jackets__image__existing 
-                    = image_tag playlist.image.url 
-                -else
-                  .jackets__image__nothing
-                    = icon('fas','music')
-              .jackets__image__info
-                = playlist.name
+          %li.jackets__image
+            = link_to playlist_adds_path(playlist) do
+              - if playlist.image.present?
+                .jackets__image__existing 
+                  = image_tag playlist.image.url 
+              -else
+                .jackets__image__nothing
+                  = icon('fas','music')
+            .jackets__image__info
+              = playlist.name
     .playlist__content
       .title
         My Feelings And Situations
       %ul.jackets
         - @playlists.each do |playlist|
-          - if current_user.id == playlist.user_id
+          - if user_signed_in? && current_user.id == playlist.user_id
             %li.jackets__image
               = link_to playlist_adds_path(playlist) do
                 - if playlist.image.present? 

@@ -6,7 +6,11 @@ class PlaylistsController < ApplicationController
   end
 
   def new
-    @playlist = Playlist.new
+    if user_signed_in?
+      @playlist = Playlist.new
+    else
+      redirect_to new_user_session_path, alert: "You need to sign in or sign up before continuing."
+    end
   end
 
   def create

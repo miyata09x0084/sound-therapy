@@ -1,5 +1,6 @@
 class AddsController < ApplicationController
   before_action :set_playlist  
+  before_action :authenticate_user!
 
   def index
     @add = Add.new
