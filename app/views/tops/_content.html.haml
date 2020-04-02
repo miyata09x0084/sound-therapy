@@ -4,8 +4,21 @@
       .main-content__user-name__content
       = icon('fas','smile')
       = current_user.name
-      ,Welcome.
+      ,こんにちは.
   - else
+  .main-content__copy
+    .main-content__copy__main
+      音楽による
+      %br/
+      感情の
+      %br/
+      マネジメント
+    .main-content__copy__secound
+      まったく新しい音楽体験が
+      %br/
+      待ってます。
+      %br/
+      ただ聴くだけなんてもったいない。
   .main-content__service
     .main-content__service__music
       = link_to playlists_path do
