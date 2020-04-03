@@ -62,5 +62,3 @@
 
 
 server '18.176.1.214', user: 'ec2-user', roles: %w{app db web}
-
-~/.ssh/SoundTherapy.pem
