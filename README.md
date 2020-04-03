@@ -1,24 +1,12 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 1.アプリの概要
+- 基本的には一行で
+# 2.アプリの機能一覧
+- 記事投稿機能
+- 記事にコメントつける機能
+- 認証機能
+- ページネーション機能
+# 3.アプリ内で使用している技術
+- インフラには何を使っているのか
+- データベースは何をつかってるのか
+- セッション管理はどのようにおこなっているのか
+![AWS Networking](https://user-images.githubusercontent.com/59190800/78341689-117a5300-75d3-11ea-85a2-ded893799dcb.png)
