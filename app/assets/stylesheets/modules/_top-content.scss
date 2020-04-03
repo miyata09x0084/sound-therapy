@@ -27,13 +27,12 @@
     background-color: rgba(0, 0, 0, 0.2);
   }
   &__copy {
-    color: rgb(54, 63, 79);
+    color: rgb(237, 242, 255);
     &__main {
       font-size: 50px;
       font-weight: bold;
       letter-spacing: -0.08em;
       line-height: 60px;
-      text-shadow: 1px 1px 1px white;
     }
     &__secound {
       font-size: 25px;
@@ -42,7 +41,6 @@
       line-height: 35px;
       margin-top: 6px;
       margin-bottom: 16px;
-      text-shadow: 1px 1px 1px white;
     }
   }
   &__service {
