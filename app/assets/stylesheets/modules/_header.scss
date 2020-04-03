@@ -29,10 +29,9 @@
   }
   .right-side {
     &__user {
-      &--btn {
+      color: rgb(0,195,230);
+      &--btn:hover {
         color: rgb(241,237,234);
-        color: rgb(0,195,230);
-        
         font-size: 20px;
         font-weight: 500;
         text-decoration: none;  
