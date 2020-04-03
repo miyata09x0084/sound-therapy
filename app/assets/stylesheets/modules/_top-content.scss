@@ -4,17 +4,27 @@
 }
 
 .wrapper {
- width: 100%;
- height: 100vh;
+  width: 100%;
+  height: 100vh;
+}
+
+.upper {
  background-image: url("/images/Oscillatoscope2b-_11.jpg");
  background-size: cover;
+ width: 100%;
+ height: 500px;
+}
+
+.lwr {
+ background-image: url("/images/woman-1148923_1920.jpg");
+ background-size: cover;
+ width: 100%;
+ height: 500px;
 }
 
 .main-content {
-  height: 100vh;
   background-color :rgba(183,78,0,0.3); 
-  padding: 57.5px 230px;
-  letter-spacing: 0.02em;
+  padding: 71.5px 230px;
   font-size: 24px;
   &__user-name {
     color: white;
@@ -47,14 +57,14 @@
     display: flex;
     font-size: 20px;
     &__music {
-      width: 100%;
+      width: 392px;
       height: 50px;
       position: relative;
       z-index: 1;
       background: rgb(0,174,204);
       border-radius: 26px;
+      padding: 0 10px;
       margin-right: 20px;
-      text-shadow: 1px 1px 1px 1px #0069b7;
       a {
         position: absolute;
         top: 0;
@@ -77,13 +87,13 @@
       } 
     }
     &__bio {
-      width: 100%;
+      width: 336px;
       height: 50px;
       position: relative;
       z-index: 1;
       background: rgb(0,174,204);
       border-radius: 26px;
-      text-shadow: 1px 1px 1px 1px #0069b7;
+      padding: 0 10px;
       a {
         position: absolute;
         top: 0;
@@ -96,7 +106,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 20px;
+        padding: 26px;
         i {
           margin-right: 8px;
         }
@@ -107,7 +117,7 @@
     }
     :hover {
       background-color: rgb(0, 195, 230);
-      border-radius: 20px;
+      border-radius: 26px;
     } 
   }
 }
