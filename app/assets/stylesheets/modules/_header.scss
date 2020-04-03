@@ -29,24 +29,19 @@
   }
   .right-side {
     &__user {
-      color: rgb(241,237,234);
-      font-size: 20px;
-      font-weight: 500;
-      text-decoration: none;  
-      margin-left: 12px;
+      &--btn {
+        color: rgb(241,237,234);
+        font-size: 20px;
+        font-weight: 500;
+        text-decoration: none;  
+        margin-left: 10px;
+      }
       &--btn:hover {
         color: rgb(0,195,230);
         font-size: 20px;
         font-weight: 500;
         text-decoration: none;  
-        margin-left: 12px;
-        i {
-          font-size: 1.6em;
-          color: white;
-        }
-      }
-      :hover {
-       
+        margin-left: 10px;
       }
     }
   }
