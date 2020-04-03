@@ -63,4 +63,4 @@
 
 server '18.176.1.214', user: 'ec2-user', roles: %w{app db web}
 
-~/.ssh/id_rsa_c17816a70f94651b35b8e1c9d8953417
+~/.ssh/SoundTherapy.pem
