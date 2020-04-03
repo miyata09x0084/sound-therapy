@@ -29,9 +29,13 @@
   }
   .right-side {
     &__user {
-      color: rgb(0,195,230);
+      color: rgb(241,237,234);
+      font-size: 20px;
+      font-weight: 500;
+      text-decoration: none;  
+      margin-left: 12px;
       &--btn:hover {
-        color: rgb(241,237,234);
+        color: rgb(0,195,230);
         font-size: 20px;
         font-weight: 500;
         text-decoration: none;  
