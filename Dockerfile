@@ -1,3 +1,4 @@
+# rubyのバージョンを指定(もともと2.5.1で開発していたのでこのバージョン)
 FROM ruby:2.5.1
 
 RUN apt-get update && apt-get install -y nodejs --no-install-recommends && rm -rf /var/lib/apt/lists/*
