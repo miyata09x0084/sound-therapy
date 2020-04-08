@@ -15,4 +15,4 @@
 - インフラには何を使っているのか
 - データベースは何をつかってるのか
 - セッション管理はどのようにおこなっているのか
-![AWS Networking (2)](https://user-images.githubusercontent.com/59190800/78736349-e0f63880-7987-11ea-95bc-f049f889773c.png)
+![AWS Networking (3)](https://user-images.githubusercontent.com/59190800/78736457-287cc480-7988-11ea-92a8-e8dc2562202e.png)
