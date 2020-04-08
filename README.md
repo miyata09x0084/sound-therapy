@@ -4,6 +4,7 @@
 併せて、自身の気分を可視化・記録することも出来ます。
 # URL
 - http://soundtherapygroup.com
+<img width="1440" alt="スクリーンショット 2020-04-08 11 23 50" src="https://user-images.githubusercontent.com/59190800/78737898-97a7e800-798b-11ea-9fdc-646daee546bd.png">
 # アプリの機能一覧
 - 認証機能
 - プレイリスト作成機能
