@@ -5,13 +5,19 @@
 # URL
 - http://soundtherapygroup.com
 <img width="1440" alt="スクリーンショット 2020-04-08 11 23 50" src="https://user-images.githubusercontent.com/59190800/78737898-97a7e800-798b-11ea-9fdc-646daee546bd.png">
-# アプリの機能一覧
+# 使用技術
+- Ruby 2.5.1, Rails 5.0.7
+- Haml,Sass
+- Docker, Docker-compose
+- nginx, unicorn
+- AWS (VPC, EC2, RDS for MySQL, Route53, ACM, ALB)
+# 機能一覧
 - 認証機能
 - プレイリスト作成機能
 - 楽曲投稿機能
 - 画像投稿機能
-- 感情認識機能
-- グラフ作成機能
+- 感情検知機能
+- グラフ表示機能
 # アプリ内で使用している技術
 - インフラには何を使っているのか
 - データベースは何をつかってるのか
