@@ -22,4 +22,4 @@
 - グラフ表示機能
 
 # インフラ構成図
-![AWS Networking (6)](https://user-images.githubusercontent.com/59190800/78739319-f458d200-798e-11ea-9d86-5a3ca23e3c13.png)
+![AWS Networking (7)](https://user-images.githubusercontent.com/59190800/78740487-dccf1880-7991-11ea-816e-769625e715e0.png)
