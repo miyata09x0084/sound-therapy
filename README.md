@@ -9,6 +9,7 @@
 # 使用技術
 - Ruby 2.5.1, Rails 5.0.7
 - Haml,Sass, jQuery
+- Face API | Microsoft Azure
 - Docker, Docker-compose
 - nginx, unicorn
 - AWS (VPC, EC2, RDS for MySQL, Route53, ACM, ALB)
@@ -19,7 +20,7 @@
 - 楽曲投稿機能
 - 画像投稿機能
 - 検索機能
-- 感情検知機能
+- 表情検知機能
 - グラフ描画機能
 
 # インフラ構成図
