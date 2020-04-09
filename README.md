@@ -8,7 +8,7 @@
 
 # 使用技術
 - Ruby 2.5.1, Rails 5.0.7
-- Haml,Sass
+- Haml,Sass, jQuery
 - Docker, Docker-compose
 - nginx, unicorn
 - AWS (VPC, EC2, RDS for MySQL, Route53, ACM, ALB)
@@ -18,6 +18,7 @@
 - プレイリスト作成機能
 - 楽曲投稿機能
 - 画像投稿機能
+- 検索機能
 - 感情検知機能
 - グラフ表示機能
 
