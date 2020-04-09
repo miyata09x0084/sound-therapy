@@ -7,7 +7,7 @@
   flex-direction: column;
   &__header {
     display: flex;
-    justify-content: start; 
+    justify-content: start;
     padding-bottom: 16px;
     &__existing {
       margin-right: 16px;
@@ -87,7 +87,6 @@
       a {
         color: rgb(241,237,234);
         text-decoration: none;
-        
       }
       :hover {
         border-bottom: 1px solid rgb(241,237,234);

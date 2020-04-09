@@ -1,5 +1,16 @@
 class PlaylistsController < ApplicationController
   def index
+    return nil if params[:keyword] == ""
+    @playlistsSearch = Playlist.where(['name LIKE ?', "%#{params[:keyword]}%"] ).limit(10)
+
+    # ajax通信の記述:dataTypeの種類に応じて参照するファイルを切り替える
+    respond_to do |format|
+        format.html
+        format.json
+        # ajax記述には、dataType: 'json' と書かれているので
+        # index.json.jbuilderファイルが読み込まれる
+    end
+
     @playlist = Playlist.new
     @playlists = Playlist.all.order("created_at DESC")
     @playlists_random = Playlist.all.order("RAND()")

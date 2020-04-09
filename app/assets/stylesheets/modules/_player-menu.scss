@@ -30,7 +30,7 @@
       font-weight: 450;
       letter-spacing: 0.05em;
       :hover {
-        background-color: rgb(0,105,183);  
+        background-color: rgb(0,105,183);
         color: white;
       }
       a {
@@ -43,7 +43,18 @@
           margin-right: 8px;
         }
       }
-    }  
+    }
+    &__form {
+      padding: 0  24px 16px 24px;
+      #playlist__search-field {
+        width: 100%;
+        line-height: 26px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        border-radius: 13px;
+        border:none;
+      }
+    }
     &__feeling {
       font-size: 0.78em;
       font-weight: 200;
@@ -58,7 +69,7 @@
       margin-top: 6px;
       padding: 0  24px 16px 24px;
       font-weight: 250;
-      letter-spacing: 0.1em; 
+      letter-spacing: 0.1em;
       .list {
         width: 100%;
         margin-bottom: 14px;
