@@ -3,29 +3,37 @@
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Yu Gothic", YuGothic, sans-serif;
 }
 
+
 .wrapper {
   width: 100%;
   height: 100vh;
 }
 
 .upper {
- background-image: url("/images/Oscillatoscope2b-_11.jpg");
- background-size: cover;
- width: 100%;
- height: 500px;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  url("/images/Oscillatoscope2b-_11.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+
 .lwr {
- background-image: url("/images/woman-1148923_1920.jpg");
- background-size: cover;
- width: 100%;
- height: 500px;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  url("/images/woman-1148923_1920.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-content {
-  background-color :rgba(183,78,0,0.3); 
-  padding: 71.5px 230px;
-  font-size: 24px;
+  width: 1140px;
   &__user-name {
     color: white;
     margin-bottom: 20px;
@@ -94,7 +102,6 @@
       background: rgb(0,174,204);
       border-radius: 26px;
       padding: 0 10px;
-      margin-bottom: 34px;
       a {
         position: absolute;
         top: 0;
@@ -120,5 +127,523 @@
       background-color: rgb(0, 195, 230);
       border-radius: 26px;
     } 
+  }
+}
+
+
+
+@media (max-width: 1150px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .upper {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/images/Oscillatoscope2b-_11.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .lwr {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/images/woman-1148923_1920.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-content {
+    width: 944px;
+    &__user-name {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 8px 8px 8px 10px;
+      border-radius: 22px;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    &__copy {
+      color: rgb(237, 242, 255);
+      &__main {
+        font-size: 54px;
+        font-weight: bold;
+        letter-spacing: -0.08em;
+        line-height: 60px;
+      }
+      &__secound {
+        font-size: 27px;
+        font-weight: 500;
+        letter-spacing: -0.12em;
+        line-height: 35px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+      }
+    }
+    &__service {
+      display: flex;
+      font-size: 20px;
+      &__music {
+        width: 392px;
+        height: 50px;
+        position: relative;
+        z-index: 1;
+        background: rgb(0,174,204);
+        border-radius: 26px;
+        padding: 0 10px;
+        margin-right: 20px;
+        a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          color: white;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+          i {
+            margin-right: 8px;
+          }
+          h2 {
+            font-weight: 500;
+          }
+        } 
+      }
+      &__bio {
+        width: 336px;
+        height: 50px;
+        position: relative;
+        z-index: 1;
+        background: rgb(0,174,204);
+        border-radius: 26px;
+        padding: 0 10px;
+        a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          color: white;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 26px;
+          i {
+            margin-right: 8px;
+          }
+          h2 {
+            font-weight: 500;
+          }
+        }   
+      }
+      :hover {
+        background-color: rgb(0, 195, 230);
+        border-radius: 26px;
+      } 
+    }
+  }
+}
+
+
+@media (max-width: 1070px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .upper {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/images/Oscillatoscope2b-_11.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .lwr {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/images/woman-1148923_1920.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-content {
+    width: 944px;
+    padding: 0 10px;
+    &__user-name {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 8px 8px 8px 10px;
+      border-radius: 22px;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    &__copy {
+      color: rgb(237, 242, 255);
+      &__main {
+        font-size: 54px;
+        font-weight: bold;
+        letter-spacing: -0.08em;
+        line-height: 60px;
+      }
+      &__secound {
+        font-size: 27px;
+        font-weight: 500;
+        letter-spacing: -0.12em;
+        line-height: 35px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+      }
+    }
+    &__service {
+      display: flex;
+      font-size: 20px;
+      &__music {
+        width: 392px;
+        height: 50px;
+        position: relative;
+        z-index: 1;
+        background: rgb(0,174,204);
+        border-radius: 26px;
+        padding: 0 10px;
+        margin-right: 20px;
+        a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          color: white;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+          i {
+            margin-right: 8px;
+          }
+          h2 {
+            font-weight: 500;
+          }
+        } 
+      }
+      &__bio {
+        width: 336px;
+        height: 50px;
+        position: relative;
+        z-index: 1;
+        background: rgb(0,174,204);
+        border-radius: 26px;
+        padding: 0 10px;
+        a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          color: white;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 26px;
+          i {
+            margin-right: 8px;
+          }
+          h2 {
+            font-weight: 500;
+          }
+        }   
+      }
+      :hover {
+        background-color: rgb(0, 195, 230);
+        border-radius: 26px;
+      } 
+    }
+  }
+}
+
+
+@media (max-width: 950px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .upper {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/images/Oscillatoscope2b-_11.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .lwr {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/images/woman-1148923_1920.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-content {
+    width: 722px;
+    &__user-name {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 8px 8px 8px 10px;
+      border-radius: 22px;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    &__copy {
+      color: rgb(237, 242, 255);
+      &__main {
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: -0.08em;
+        line-height: 40px;
+      }
+      &__secound {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: -0.12em;
+        line-height: 23px;
+        margin-top: 4px;
+        margin-bottom: 10px;
+      }
+    }
+    &__service {
+      display: flex;
+      font-size: 14px;
+      &__music {
+        width: 392px;
+        height: 50px;
+        position: relative;
+        z-index: 1;
+        background: rgb(0,174,204);
+        border-radius: 26px;
+        padding: 0 10px;
+        margin-right: 20px;
+        a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          color: white;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+          i {
+            margin-right: 8px;
+          }
+          h2 {
+            font-weight: 500;
+          }
+        } 
+      }
+      &__bio {
+        width: 336px;
+        height: 50px;
+        position: relative;
+        z-index: 1;
+        background: rgb(0,174,204);
+        border-radius: 26px;
+        padding: 0 10px;
+        a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          color: white;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 26px;
+          i {
+            margin-right: 8px;
+          }
+          h2 {
+            font-weight: 500;
+          }
+        }   
+      }
+      :hover {
+        background-color: rgb(0, 195, 230);
+        border-radius: 26px;
+      } 
+    }
+  }
+}
+
+
+@media (max-width: 375px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .upper {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/images/Oscillatoscope2b-_11.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .lwr {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/images/woman-1148923_1920.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-content {
+    width: 100%;
+    &__user-name {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 8px 8px 8px 10px;
+      border-radius: 22px;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    &__copy {
+      color: rgb(237, 242, 255);
+      &__main {
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: -0.08em;
+        line-height: 40px;
+      }
+      &__secound {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: -0.12em;
+        line-height: 23px;
+        margin-top: 4px;
+        margin-bottom: 10px;
+      }
+    }
+    &__service {
+      display: flex;
+      font-size: 14px;
+      &__music {
+        width: 392px;
+        height: 50px;
+        position: relative;
+        z-index: 1;
+        background: rgb(0,174,204);
+        border-radius: 26px;
+        padding: 0 10px;
+        margin-right: 20px;
+        a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          color: white;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+          i {
+            margin-right: 8px;
+          }
+          h2 {
+            font-weight: 500;
+          }
+        } 
+      }
+      &__bio {
+        width: 336px;
+        height: 50px;
+        position: relative;
+        z-index: 1;
+        background: rgb(0,174,204);
+        border-radius: 26px;
+        padding: 0 10px;
+        a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          color: white;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 26px;
+          i {
+            margin-right: 8px;
+          }
+          h2 {
+            font-weight: 500;
+          }
+        }   
+      }
+      :hover {
+        background-color: rgb(0, 195, 230);
+        border-radius: 26px;
+      } 
+    }
   }
 }

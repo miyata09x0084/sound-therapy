@@ -45,7 +45,7 @@ class PlaylistsController < ApplicationController
   end
 
   private
-  def playlist_params 
+  def playlist_params
     params.require(:playlist).permit(:name, :image).merge(user_id: current_user.id)
   end
 end

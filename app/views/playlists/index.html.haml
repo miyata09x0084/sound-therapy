@@ -16,7 +16,7 @@
       MY LIBRARY
     .side-menu__playlist
       - @playlists.each do |playlist|
-        - if user_signed_in? && current_user.id == playlist.user_id 
+        - if user_signed_in? && current_user.id == playlist.user_id
           .list
             = link_to playlist_adds_path(playlist) do
               .list__name

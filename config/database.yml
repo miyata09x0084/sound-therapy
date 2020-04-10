@@ -16,6 +16,7 @@ default: &default
   username: root
   password: password
   socket: /tmp/mysql.sock
+
 development:
   <<: *default
   database: sound_therapy_development
