@@ -35,35 +35,29 @@
     box-sizing: border-box;
     border-radius: 5px;
     border:none;
+    margin-bottom: 16px;
   }
-  &__map {
+  &__mood {
     width: 100%;
-    background-color: rgb(178, 195, 207);
-    color: rgb(117,117,117);
-    font-weight: 350;
+    background-color: #b8b8b8;
     padding: 30px;
-    &__title {
-      font-size: 1.1em;
-      margin-bottom: 12px;
-    }
-    &__inner {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    &__inner-box {
       margin-bottom: 4px;
-      &__box {
-        text-align: center; 
-        &__face {
-          font-size: 1.6em;
-          opacity: 0.7;
-        }  
-        &__name {
-          font-size: 1em;
-        }
-      }
-    }
-    &__dots {
       text-align: center;
+      &__face {
+        font-size: 1.6em;
+        margin-top: 6px;
+      }
+      &__name {
+        font-size: 1em;
+        font-weight: 300;
+        letter-spacing: 0.02em;
+        color: rgb(255, 255, 255);
+      }
     }
   }
   &__mask{

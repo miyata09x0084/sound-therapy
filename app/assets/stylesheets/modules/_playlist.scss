@@ -30,7 +30,7 @@
       border-radius: 10px;
       display: inline-block;
       margin: 18px 14px 14px 0;
-      &__info {
+      &__place {
         width: 136px;
         color: white;
         font-weight: 450;
@@ -40,6 +40,23 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+      }
+      &__mood {
+        width: 136px;
+        color: white;
+        font-weight: 450;
+        font-size: 1em;
+        letter-spacing: 0.04em;
+        margin-top: 2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: flex;
+        align-items: center;
+        &__picture {
+          font-size: 1.3em;
+          margin-left: 6px;
+        }
       }
       &__existing {
         img {

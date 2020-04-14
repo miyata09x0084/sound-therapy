@@ -7,7 +7,7 @@ $(function(){
                   <a href="/playlists/${playlist.id}/adds"">
                     <div class="jackets__image__existing"><img src="${playlist.image.url}"></div>
                   </a>
-                  <div class="jackets__image__info">${playlist.name}</div>
+                  <div class="jackets__image__place">Place : ${playlist.name}</div>
                 </li>
               `;
               $("#playlist__search-result").append(html);
@@ -17,7 +17,7 @@ $(function(){
                 <a href="/playlists/${playlist.id}/adds"">
                   <div class="jackets__image__existing"><img src="/images/スクリーンショット 2020-04-08 22.33.25.jpeg"></div>
                 </a>
-                <div class="jackets__image__info">${playlist.name}</div>
+                <div class="jackets__image__place">Place : ${playlist.name}</div>
                 </li>
               `;
               $("#playlist__search-result").append(html);

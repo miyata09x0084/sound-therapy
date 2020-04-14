@@ -32,19 +32,48 @@
         #playlist__search-result
     .playlist__content.deleteContent
       .title
-        Shared Feelings And Situations
+        Shared Playlists
       %ul.jackets
         - @playlists_random.each do |playlist|
           %li.jackets__image
             = link_to playlist_adds_path(playlist) do
               - if playlist.image.present?
-                .jackets__image__existing 
-                  = image_tag playlist.image.url 
+                .jackets__image__existing
+                  = image_tag playlist.image.url
               -else
                 .jackets__image__nothing
                   = icon('fas','music')
-            .jackets__image__info
+            .jackets__image__place
+              Place : 
               = playlist.name
+            .jackets__image__mood
+              Mood : 
+              .jackets__image__mood__picture
+                - if playlist.feeling.to_i == 1
+                  &#x1f601;
+                - elsif playlist.feeling.to_i == 2
+                  &#x1f600;
+                - elsif playlist.feeling.to_i == 3
+                  &#x1f60b;
+                - elsif playlist.feeling.to_i == 4
+                  &#x1f60d;
+                - elsif playlist.feeling.to_i == 5
+                  &#x1f60c;
+                - elsif playlist.feeling.to_i == 6
+                  &#x1f642;
+                - elsif playlist.feeling.to_i == 7
+                  &#x1f615;
+                - elsif playlist.feeling.to_i == 8
+                  &#x1f610;
+                - elsif playlist.feeling.to_i == 9
+                  &#x1f62c;
+                - elsif playlist.feeling.to_i == 10
+                  &#x1f624;
+                - elsif playlist.feeling.to_i == 11
+                  &#x1f623;
+                - elsif playlist.feeling.to_i == 12
+                  &#x1f614;
+                -# = render "mood", locals: { playlist: playlist }
     .playlist__content.deleteContent
       .title
         Recently Added
@@ -58,8 +87,37 @@
               -else
                 .jackets__image__nothing
                   = icon('fas','music')
-            .jackets__image__info
+            .jackets__image__place
+              Place : 
               = playlist.name
+            .jackets__image__mood
+              Mood : 
+              .jackets__image__mood__picture
+                - if playlist.feeling.to_i == 1
+                  &#x1f601;
+                - elsif playlist.feeling.to_i == 2
+                  &#x1f600;
+                - elsif playlist.feeling.to_i == 3
+                  &#x1f60b;
+                - elsif playlist.feeling.to_i == 4
+                  &#x1f60d;
+                - elsif playlist.feeling.to_i == 5
+                  &#x1f60c;
+                - elsif playlist.feeling.to_i == 6
+                  &#x1f642;
+                - elsif playlist.feeling.to_i == 7
+                  &#x1f615;
+                - elsif playlist.feeling.to_i == 8
+                  &#x1f610;
+                - elsif playlist.feeling.to_i == 9
+                  &#x1f62c;
+                - elsif playlist.feeling.to_i == 10
+                  &#x1f624;
+                - elsif playlist.feeling.to_i == 11
+                  &#x1f623;
+                - elsif playlist.feeling.to_i == 12
+                  &#x1f614;
+                -# = render "mood", locals: { playlist: playlist }
     .playlist__content.deleteContent
       .title
         My Feelings And Situations
@@ -74,5 +132,34 @@
                 -else
                   .jackets__image__nothing
                     = icon('fas','music')
-              .jackets__image__info
+              .jackets__image__place
+                Place : 
                 = playlist.name
+              .jackets__image__mood
+                Mood : 
+                .jackets__image__mood__picture
+                  - if playlist.feeling.to_i == 1
+                    &#x1f601;
+                  - elsif playlist.feeling.to_i == 2
+                    &#x1f600;
+                  - elsif playlist.feeling.to_i == 3
+                    &#x1f60b;
+                  - elsif playlist.feeling.to_i == 4
+                    &#x1f60d;
+                  - elsif playlist.feeling.to_i == 5
+                    &#x1f60c;
+                  - elsif playlist.feeling.to_i == 6
+                    &#x1f642;
+                  - elsif playlist.feeling.to_i == 7
+                    &#x1f615;
+                  - elsif playlist.feeling.to_i == 8
+                    &#x1f610;
+                  - elsif playlist.feeling.to_i == 9
+                    &#x1f62c;
+                  - elsif playlist.feeling.to_i == 10
+                    &#x1f624;
+                  - elsif playlist.feeling.to_i == 11
+                    &#x1f623;
+                  - elsif playlist.feeling.to_i == 12
+                    &#x1f614;
+                  -# = render "mood", locals: { playlist: playlist }
