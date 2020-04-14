@@ -4,7 +4,7 @@
 併せて、自身の気分を可視化・記録することも出来ます。
 # URL
 - http://soundtherapygroup.com
-<img width="1440" alt="スクリーンショット 2020-04-08 11 23 50" src="https://user-images.githubusercontent.com/59190800/78737898-97a7e800-798b-11ea-9fdc-646daee546bd.png">
+<img width="1440" alt="スクリーンショット 2020-04-10 18 41 50" src="https://user-images.githubusercontent.com/59190800/78981512-05563e80-7b5b-11ea-98f4-1fc2e3b9fe19.png">
 
 # 使用技術
 - Ruby 2.5.1, Rails 5.0.7
