@@ -29,7 +29,7 @@ class PlaylistsController < ApplicationController
     if @playlist.save
       redirect_to playlist_adds_path(@playlist), notice: "Created successfully."
     else
-      flash.now[:alert] = "You need to enter Name."
+      flash.now[:alert] = "You need to enter Place."
       render :new
     end
   end
