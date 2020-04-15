@@ -68,7 +68,7 @@ class EmotionsController < ApplicationController
 
       # Request headers
       # Replace <Subscription Key> with your valid subscription key.
-      request['Ocp-Apim-Subscription-Key'] = '8d4223df7b0d48e69f3cc03263301344'
+      request['Ocp-Apim-Subscription-Key'] = ENV['Subscription_Key']
       request['Content-Type'] = 'application/json'
       
       imageUri = params[:url]

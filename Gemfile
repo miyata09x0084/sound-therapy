@@ -90,6 +90,8 @@ gem 'rename'
 
 gem 'rubocop-faker'
 
+gem 'dotenv-rails'
+
 group :production do
   gem 'unicorn', '5.4.1' 
 end
