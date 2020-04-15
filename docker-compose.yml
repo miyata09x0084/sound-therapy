@@ -7,14 +7,13 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_USER: root
       MYSQL_PASSWORD: password
-      - Subscription-Key=$Subscription-Key
     volumes:
       - ./mysql/mysql_data:/var/lib/mysql # データの永続化
     ports:
       - "4306:3306" # ホストからゲストへポートフォワード。sequelProと繋ぎたいので、3306ではなく4306をポートに指定
   web: # さっき書いたDockerfileをwebって名前で扱うよ、って感じです
+    SUBSCRIPTION_KEY: .env
     build:
-      env_file: .env
       context: .
       dockerfile: Dockerfile
     # 一度サーバーが起動すると起動し続けるので、rm -f /workdir/tmp/pids/server.pidで、dockerが起動する度に一旦停止させる
