@@ -1,28 +1,5 @@
 .wrapper-music
-  .side-menu
-    .side-menu__serviceName
-      = link_to root_path do
-        = icon('fas','adjust')
-        %h1.side-menu__serviceName__content__title
-          SoundTherapy
-    .side-menu__home
-      = link_to playlists_path do
-        = icon('fas','home')
-        %h1.side-menu__home__title
-          Home
-    .side-menu__feeling
-      MY LIBRARY
-    .side-menu__playlist
-      - current_user.playlists.each do |playlist|
-        .list
-          = link_to playlist_adds_path(playlist) do
-            .list__name
-              = playlist.name
-    %h2.side-menu__newPlaylist
-      = link_to new_playlist_path do
-        = icon('fas','smile')
-        %h1.side-menu__newPlaylist__title
-        New Playlist
+  = render partial: "playlists/side-menu"
   .main
     .main__header
       - if @playlist.image.present?
@@ -56,7 +33,7 @@
               = Rinku.auto_link(add.url, :all, 'target="_blank"').html_safe
             .main__content__info__data__artist
               = add.artist
-            .main__content__info__data__song  
+            .main__content__info__data__song
               = add.song
           - if user_signed_in? &&current_user.id == @playlist.user_id
             .main__content__info__delete-user

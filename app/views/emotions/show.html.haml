@@ -1,29 +1,11 @@
-.header
-  .header__content
-    .left-side
-      .user-name
-      %h1.left-side__serviceName
-        = link_to root_path, class: "left-side__serviceName__content" do
-          = icon('fas','adjust')
-          .left-side__serviceName__content__name
-            SoundTherapy
-    .right-side
-      .right-side__uer
-        - if user_signed_in?
-          = link_to destroy_user_session_path, method: :delete, class: "right-side__user--btn" do
-            Logout
-        - else
-          = link_to new_user_registration_path, class: "right-side__user--btn" do
-            Sign up
-          = link_to new_user_session_path, class: "right-side__user--btn" do
-            Login
+= render partial: "tops/header"
 .wrapper
   .main-result
     .result
       .result__pi-chart
         %h2.result__pi-chart__mood
           Your Feeling
-        .result__pi-chart__visual  
+        .result__pi-chart__visual
           %canvas#myChartDay{:height => "100", :width => "400"}
           :javascript
             if (gon.chartData) {
@@ -33,4 +15,3 @@
         .result__pi-chart__history
           = link_to emotions_path do
             View History
-          

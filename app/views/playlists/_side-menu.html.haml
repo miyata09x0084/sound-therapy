@@ -1,0 +1,52 @@
+.side-menu
+  .side-menu__serviceName
+    = link_to root_path do
+      = icon('fas','adjust')
+      %h1.side-menu__serviceName__content__title
+        SoundTherapy
+  .side-menu__home
+    = link_to playlists_path do
+      = icon('fas','home')
+      %h1.side-menu__home__title
+        Home
+  .side-menu__form
+    %input#playlist__search-field{:placeholder => "Search", :type => "text"}/
+  .side-menu__feeling
+    MY LIBRARY
+  .side-menu__playlist
+    - @playlists.each do |playlist|
+      - if user_signed_in? && current_user.id == playlist.user_id
+        .list
+          = link_to playlist_adds_path(playlist) do
+            .list__face
+              - if playlist.feeling.to_i == 1
+                &#x1f601;
+              - elsif playlist.feeling.to_i == 2
+                &#x1f600;
+              - elsif playlist.feeling.to_i == 3
+                &#x1f60b;
+              - elsif playlist.feeling.to_i == 4
+                &#x1f60d;
+              - elsif playlist.feeling.to_i == 5
+                &#x1f60c;
+              - elsif playlist.feeling.to_i == 6
+                &#x1f642;
+              - elsif playlist.feeling.to_i == 7
+                &#x1f615;
+              - elsif playlist.feeling.to_i == 8
+                &#x1f610;
+              - elsif playlist.feeling.to_i == 9
+                &#x1f62c;
+              - elsif playlist.feeling.to_i == 10
+                &#x1f624;
+              - elsif playlist.feeling.to_i == 11
+                &#x1f623;
+              - elsif playlist.feeling.to_i == 12
+                &#x1f614;
+            .list__name
+              = playlist.name
+  %h2.side-menu__newPlaylist
+    = link_to new_playlist_path do
+      = icon('fas','smile')
+      %h1.side-menu__newPlaylist__title
+      New Playlist

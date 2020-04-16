@@ -1,0 +1,19 @@
+.header
+  .header__content
+    .left-side
+      .user-name
+      %h1.left-side__serviceName
+        = link_to root_path, class: "left-side__serviceName__content" do
+          = icon('fas','adjust')
+          .left-side__serviceName__content__name
+            SoundTherapy
+    .right-side
+      .right-side__uer
+        - if user_signed_in?
+          = link_to destroy_user_session_path, method: :delete, class: "right-side__user--btn" do
+            Logout
+        - else
+          = link_to new_user_registration_path, class: "right-side__user--btn" do
+            Sign up
+          = link_to new_user_session_path, class: "right-side__user--btn" do
+            Login

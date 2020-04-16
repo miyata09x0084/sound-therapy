@@ -34,5 +34,6 @@ class AddsController < ApplicationController
 
   def set_playlist
     @playlist = Playlist.find(params[:playlist_id])
+    @playlists = Playlist.all.order("created_at DESC")
   end
 end
