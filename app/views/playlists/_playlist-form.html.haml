@@ -2,11 +2,8 @@
   .playlist-form
     .playlist-form__title
       = current_user.name
-      ,  under what circumstances do you want to listen?
+      ,  How are you feeling??
     =form_for @playlist do |f|
-      .playlist-form__name
-        Place
-      = f.text_field :name, class: "playlist-form__input", placeholder: "At home, On a drive, On the beach, ..."
       .playlist-form__name
         Mood
       .playlist-form__mood
@@ -82,6 +79,9 @@
             &#x1f614;
           .playlist-form__mood__inner-box__name
             Sad
+      .playlist-form__name
+        Place
+      = f.text_field :name, class: "playlist-form__input", placeholder: "At home, On a drive, On the beach, ..."
       .playlist-form__mask
         Choose image
       = f.label :image, class: 'playlist-form__image' do
