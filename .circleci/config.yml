@@ -91,7 +91,9 @@ jobs: # ステップの集合
       - store_test_results: # テストサマリー (https://circleci.com/docs/ja/2.0/collect-test-data/) に表示するテスト結果をアップロードします
           path: test_results
       # デプロイコンフィグの例については https://circleci.com/docs/ja/2.0/deployment-integrations/ を参照してください
-      - add_ssh_keys: "c1:78:16:a7:0f:94:65:1b:35:b8:e1:c9:d8:95:34:17"
+      - add_ssh_keys:
+        fingerprints:
+          - "c1:78:16:a7:0f:94:65:1b:35:b8:e1:c9:d8:95:34:17"
       - run:
-          name: テストが完了し、ブランチが Master である場合は AWS にデプロイ
-          command: bundle exec cap production deploy
+        name: テストが完了し、ブランチが Master である場合は AWS にデプロイ
+        command: bundle exec cap production deploy
