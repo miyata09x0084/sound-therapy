@@ -5,9 +5,12 @@ jobs: # ステップの集合
     docker: # Docker でステップを実行します
       - image: circleci/ruby:2.5.1 # このイメージをすべての `steps` が実行されるプライマリコンテナとして使用します
         environment: # プライマリコンテナの環境変数
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+          PGUSER: circleci-demo-ruby
           RAILS_ENV: test
           PGHOST: 127.0.0.1
-          PGUSER: root
           BUNDLER_VERSION: 2.1.4
       - image: circleci/mysql:5.6 # データベースイメージ
         environment: # データベースの環境変数
