@@ -96,9 +96,14 @@ jobs: # ステップの集合
       enabled: true
     steps:
       - add_ssh_keys:
-        fingerprints:
-          - "c1:78:16:a7:0f:94:65:1b:35:b8:e1:c9:d8:95:34:17"
-      - run:
-        name: テストが完了し、ブランチが Master である場合は AWS にデプロイ
-        command: bundle exec cap production deploy
+          fingerprints:
+            - "XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX"
+
+      - deploy:
+          name: Capistrano deploy
+          command: |
+            if [ "${CIRCLE_BRANCH}" != "master" ]; then
+              exit 0
+            fi
+            bundle exec cap production deploy
 
