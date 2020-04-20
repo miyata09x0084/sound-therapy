@@ -13,11 +13,12 @@ jobs: # ステップの集合
           RAILS_ENV: test
           BUNDLER_VERSION: 2.1.4
       - image: circleci/mysql:5.6 # データベースイメージ
-        environment: # データベースの環境変数
-          database: sound_therapy_test
-          # MYSQL_ROOT_PASSWORD: password
-          # MYSQL_USER: root
-          # MYSQL_PASSWORD: password
+        environment:
+          MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+          MYSQL_ROOT_HOST: '127.0.0.1'
+
+    working_directory: ~/sound-therapy
+
     steps: # 実行可能コマンドの集合
       - checkout # ソースコードを作業ディレクトリにチェックアウトする特別なステップ
 
@@ -66,13 +67,15 @@ jobs: # ステップの集合
       #     paths:
       #       - ~/.cache/yarn
 
-      - run:
-          name: DB を待機
-          command: bundle exec rake db:create
+      # Database setup
+      - run: mv ./config/database.yml.ci ./config/database.yml
 
+      # Database setup
       - run:
-          name: データベースをセットアップ
-          command: bin/rails db:migrate
+          name: Databasesetup
+          command: |
+            bundle exec rake db:create
+            bundle exec rake db:schema:load
 
       - run:
           name: RSpec を並列実行
