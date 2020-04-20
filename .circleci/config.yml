@@ -15,9 +15,9 @@ jobs: # ステップの集合
       - image: circleci/mysql:5.6 # データベースイメージ
         environment: # データベースの環境変数
           database: sound_therapy_test
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_USER: root
-          MYSQL_PASSWORD: password
+          # MYSQL_ROOT_PASSWORD: password
+          # MYSQL_USER: root
+          # MYSQL_PASSWORD: password
     steps: # 実行可能コマンドの集合
       - checkout # ソースコードを作業ディレクトリにチェックアウトする特別なステップ
 
