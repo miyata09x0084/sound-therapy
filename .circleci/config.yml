@@ -68,11 +68,11 @@ jobs: # ステップの集合
 
       - run:
           name: DB を待機
-          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+          command: bundle exec rake db:create
 
       - run:
           name: データベースをセットアップ
-          command: bin/rails db:schema:load --trace
+          command: bundle exec rake db:schema:load
 
       # - run:
       #     name: RSpec を並列実行
