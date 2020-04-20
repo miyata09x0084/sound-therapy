@@ -92,8 +92,6 @@ gem 'rubocop-faker'
 
 gem 'dotenv-rails'
 
-gem "rspec_junit_formatter"
-
 group :production do
   gem 'unicorn', '5.4.1'
 end
