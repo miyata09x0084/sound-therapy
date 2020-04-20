@@ -3,7 +3,7 @@ jobs: # ステップの集合
   build: # Workflows を使用しない実行では、エントリポイントとして `build` ジョブが必要
     parallelism: 3 # このジョブのインスタンスを 3つ並列実行します
     docker: # Docker でステップを実行します
-      - image: circleci/ruby:2.5.1 # このイメージをすべての `steps` が実行されるプライマリコンテナとして使用します
+      - image: circleci/ruby:2.4.2-jessie-node # このイメージをすべての `steps` が実行されるプライマリコンテナとして使用します
         environment: # プライマリコンテナの環境変数
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
@@ -68,7 +68,7 @@ jobs: # ステップの集合
 
       - run:
           name: DB を待機
-          command: bundle exec rails s -p 3000 -b '0.0.0.0'"
+          command: bundle exec rake db:create
 
       - run:
           name: データベースをセットアップ
