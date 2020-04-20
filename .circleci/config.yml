@@ -92,10 +92,11 @@ jobs: # ステップの集合
           path: test_results
       # デプロイコンフィグの例については https://circleci.com/docs/ja/2.0/deployment-integrations/ を参照してください
 
+  deploy-job:
+    steps:
       - add_ssh_keys:
-        fingerprints:
-          - "c1:78:16:a7:0f:94:65:1b:35:b8:e1:c9:d8:95:34:17"
-
+          fingerprints:
+            - "c1:78:16:a7:0f:94:65:1b:35:b8:e1:c9:d8:95:34:17"
       - deploy:
           name: Capistrano deploy
           command: |
