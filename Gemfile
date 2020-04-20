@@ -40,8 +40,9 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   gem 'rspec-rails'
+  gem "rspec_junit_formatter"
   gem 'factory_bot_rails'
-  gem 'rails-controller-testing' 
+  gem 'rails-controller-testing'
   gem 'faker', "~> 2.8"
 
   gem 'capistrano'
@@ -93,5 +94,5 @@ gem 'rubocop-faker'
 gem 'dotenv-rails'
 
 group :production do
-  gem 'unicorn', '5.4.1' 
+  gem 'unicorn', '5.4.1'
 end
