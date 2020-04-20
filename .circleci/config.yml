@@ -11,7 +11,7 @@ jobs: # ステップの集合
           BUNDLER_VERSION: 2.1.4
       - image: circleci/postgres:9.5-alpine # データベースイメージ
         environment: # データベースの環境変数
-          MYSQL_DATABASE: docker_development
+          MYSQL_DATABASE: sound_therapy_test
           MYSQL_ROOT_PASSWORD: password
           MYSQL_USER: root
           MYSQL_PASSWORD: password
