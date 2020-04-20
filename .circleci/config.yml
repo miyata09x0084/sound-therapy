@@ -102,14 +102,3 @@ jobs: # ステップの集合
         name: テストが完了し、ブランチが Master である場合は AWS にデプロイ
         command: bundle exec cap production deploy
 
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
