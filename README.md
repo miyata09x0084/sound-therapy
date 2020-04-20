@@ -13,8 +13,8 @@
 - Docker, Docker-compose
 - nginx, unicorn
 - AWS (VPC, EC2, RDS for MySQL, Route53, ACM, ALB)
--Circle CI
--git, Github
+- Circle CI
+- git, Github
 
 # 機能一覧
 - 認証機能
