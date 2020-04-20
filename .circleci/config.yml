@@ -1,9 +1,9 @@
-zversion: 2 # CircleCI 2.0 を使用します
+version: 2 # CircleCI 2.0 を使用します
 jobs: # ステップの集合
   build: # Workflows を使用しない実行では、エントリポイントとして `build` ジョブが必要
     parallelism: 3 # このジョブのインスタンスを 3つ並列実行します
     docker: # Docker でステップを実行します
-      - image: circleci/ruby:2.5.1 # このイメージをすべての `steps` が実行されるプライマリコンテナとして使用します
+      - image: circleci/ruby:2.4.2-jessie-node # このイメージをすべての `steps` が実行されるプライマリコンテナとして使用します
         environment: # プライマリコンテナの環境変数
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
@@ -11,22 +11,19 @@ jobs: # ステップの集合
           PGHOST: 127.0.0.1
           PGUSER: circleci-demo-ruby
           RAILS_ENV: test
-          BUNDLER_VERSION: 2.1.4
-      - image: circleci/mysql:5.6 # データベースイメージ
+      - image: circleci/postgres:9.5-alpine # データベースイメージ
         environment: # データベースの環境変数
-          MYSQL_DATABASE: sound_therapy_development
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_USER: root
-          MYSQL_PASSWORD: password
-      steps: # 実行可能コマンドの集合
-        - checkout # ソースコードを作業ディレクトリにチェックアウトする特別なステップ
+          POSTGRES_USER: circleci-demo-ruby
+          POSTGRES_DB: rails_blog
+          POSTGRES_PASSWORD: ""
+    steps: # 実行可能コマンドの集合
+      - checkout # ソースコードを作業ディレクトリにチェックアウトする特別なステップ
 
       # Bundler のバージョンを指定します
 
       - run:
           name: Bundler を指定
-           gem uninstall bundler
-           gem install bundler
+          command: bundle -v
 
       # バンドルキャッシュを復元します
       # 依存関係キャッシュについては https://circleci.com/docs/ja/2.0/caching/ をお読みください
