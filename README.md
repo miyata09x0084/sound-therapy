@@ -24,4 +24,4 @@
 - グラフ描画機能
 
 # インフラ構成図
-![AWS Networking (12)](https://user-images.githubusercontent.com/59190800/79743000-c3897d00-833e-11ea-8e40-399eb0cc59a9.png)
+![AWS Networking (13)](https://user-images.githubusercontent.com/59190800/79743104-f3388500-833e-11ea-8be2-508f02c667d0.png)
