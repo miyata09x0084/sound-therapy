@@ -12,56 +12,56 @@
 
 ActiveRecord::Schema.define(version: 20200411064103) do
 
-  create_table "adds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "artist"
-    t.string   "song"
-    t.string   "url"
-    t.integer  "user_id"
-    t.integer  "playlist_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["playlist_id"], name: "index_adds_on_playlist_id", using: :btree
-    t.index ["user_id"], name: "index_adds_on_user_id", using: :btree
-  end
-
-  create_table "emotions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.float    "anger",      limit: 24
-    t.float    "contempt",   limit: 24
-    t.float    "disgust",    limit: 24
-    t.float    "fear",       limit: 24
-    t.float    "happiness",  limit: 24
-    t.float    "neutral",    limit: 24
-    t.float    "sadness",    limit: 24
-    t.float    "surprise",   limit: 24
-    t.integer  "user_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.string   "image"
-    t.index ["user_id"], name: "index_emotions_on_user_id", using: :btree
-  end
-
-  create_table "playlists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.integer  "user_id"
+  create_table "adds", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "artist"
+    t.string "song"
+    t.string "url"
+    t.integer "user_id"
+    t.integer "playlist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "image"
-    t.string   "feeling"
-    t.index ["user_id"], name: "index_playlists_on_user_id", using: :btree
+    t.index ["playlist_id"], name: "index_adds_on_playlist_id"
+    t.index ["user_id"], name: "index_adds_on_user_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                                null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "emotions", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.float "anger", limit: 24
+    t.float "contempt", limit: 24
+    t.float "disgust", limit: 24
+    t.float "fear", limit: 24
+    t.float "happiness", limit: 24
+    t.float "neutral", limit: 24
+    t.float "sadness", limit: 24
+    t.float "surprise", limit: 24
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image"
+    t.index ["user_id"], name: "index_emotions_on_user_id"
+  end
+
+  create_table "playlists", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", null: false
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image"
+    t.string "feeling"
+    t.index ["user_id"], name: "index_playlists_on_user_id"
+  end
+
+  create_table "users", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["name"], name: "index_users_on_name", using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "adds", "playlists"
