@@ -11,8 +11,7 @@
 // about supported directives.
 //
 //= require Chart.min
-//= require jquery
-//= require jquery_ujs
+//= require rails-ujs
 //= require_tree .
 
 //= require chartkick
