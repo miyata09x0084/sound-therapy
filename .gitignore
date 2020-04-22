@@ -17,6 +17,7 @@
 /mysql/*
 
 # Ignore Byebug command history file.
+
 .byebug_history
 
 public/uploads/*
