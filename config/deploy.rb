@@ -1,4 +1,4 @@
-lock '3.12.1'
+lock '~> 3.12.1'
 
 set :application, 'sound-therapy'
 
