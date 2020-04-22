@@ -74,8 +74,8 @@ jobs: # ステップの集合
       - run:
           name: Databasesetup
           command: |
-            bundle exec rake db:create
-            bundle exec rake db:schema:load
+            bundle exec rake db:migrate:reset
+¥
 
       - run:
           name: RSpec を並列実行
