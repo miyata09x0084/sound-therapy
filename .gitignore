@@ -17,6 +17,7 @@
 /mysql/*
 
 # Ignore Byebug command history file.
+
 .byebug_history
 
 public/uploads/*
@@ -24,3 +25,6 @@ public/uploads/*
 config/secrets.yml
 
 /.env
+
+/node_modules
++/yarn-error.log

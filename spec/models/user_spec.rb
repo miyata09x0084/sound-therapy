@@ -1,4 +1,4 @@
-require 'rails_helper' 
+require 'rails_helper'
 
 describe User do
   describe '#create', type: :model do
@@ -31,7 +31,7 @@ describe User do
       user = build(:user, password_confirmation: "")
       user.valid?
       expect(user.errors[:password_confirmation]).to include("doesn't match Password")
-    end 
+    end
 
     it "is invalid with a duplicate email address" do
       user = create(:user)
@@ -46,5 +46,5 @@ describe User do
       expect(user.errors[:password][0]).to include("is too short")
     end
 
-  end 
+  end
 end
