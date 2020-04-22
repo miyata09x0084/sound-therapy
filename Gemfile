@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.1.7'
+gem 'rails', '~> 5.1.6'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
@@ -60,8 +60,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'rubocop', require: false
-
-  gem 'bundle_outdated_formatter'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -93,8 +91,6 @@ gem 'rename'
 gem 'rubocop-faker'
 
 gem 'dotenv-rails'
-
-# gem "rspec_junit_formatter"
 
 group :production do
   gem 'unicorn', '5.4.1'
