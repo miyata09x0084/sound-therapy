@@ -12,7 +12,7 @@ services:
     ports:
       - "4306:3306" # ホストからゲストへポートフォワード。sequelProと繋ぎたいので、3306ではなく4306をポートに指定
   web: # さっき書いたDockerfileをwebって名前で扱うよ、って感じです
-    env_file: .env
+    # env_file: .env
     build:
       context: .
       dockerfile: Dockerfile
