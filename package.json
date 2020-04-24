@@ -11,13 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
-
-  {
-    "name": "chart_js_sample",
-    "private": true,
-    "dependencies": {
-      "chart.js": "^2.7.1"
-    }
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^2.9.3",
+    "vue-chartjs": "^3.5.0"
   }
 }
