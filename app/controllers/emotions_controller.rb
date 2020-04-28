@@ -88,7 +88,7 @@ class EmotionsController < ApplicationController
         @disgust = emoData["disgust"]
         @fear = emoData["fear"]
         @happiness = emoData["happiness"]
-        @neutral = emoData["neutral"] 
+        @neutral = emoData["neutral"]
         @sadness = emoData["sadness"]
         @surprise = emoData["surprise"]
         @emotion = Emotion.create!(anger: @anger, contempt: @contempt, disgust: @disgust, fear: @fear, happiness: @happiness, neutral: @neutral, sadness: @sadness, surprise: @surprise, user_id: current_user.id)
