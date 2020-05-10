@@ -1,5 +1,5 @@
 class AddsController < ApplicationController
-  before_action :set_playlist  
+  before_action :set_playlist
   before_action :authenticate_user!
 
   def index
@@ -9,7 +9,7 @@ class AddsController < ApplicationController
 
   def create
     @add = @playlist.adds.new(add_params)
-    
+
     if @add.save
       redirect_to playlist_adds_path(@playlist), notice: "Added successfully."
     else
