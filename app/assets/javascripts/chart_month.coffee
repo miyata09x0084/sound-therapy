@@ -6,7 +6,7 @@ window.draw_graphMonth = ->
         data: {
             labels: ["Anger", "Contempt", "Disgust", "Fear", "Happiness", "Neutral", "Sadness", "Surprise"],
             datasets: [{
-                data: gon.chartMonths,
+                data: gon.chartMonths_ave,
                 backgroundColor: [
                     'rgb(217,70,56)',
                     'rgb(235,139,47)',

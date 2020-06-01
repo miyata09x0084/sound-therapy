@@ -19,11 +19,11 @@ class EmotionsController < ApplicationController
              sadnessWeek,
              surpriseWeek
             ]
-    chartWeeks = []
+    chartWeeks_ave = []
     emotionWeeks.each do |emotionWeek|
-      chartWeeks << emotionWeek.inject(:+) / emotionWeek.length
+      chartWeeks_ave << emotionWeek.inject(:+) / emotionWeek.length
     end
-    gon.chartWeeks = chartWeeks
+    gon.chartWeeks_ave = chartWeeks_ave
 
     angerMonth = Emotion.with_monthly_data.search_with_id(current_user.id).search_with_feeling(:anger)
     contemptMonth = Emotion.with_monthly_data.search_with_id(current_user.id).search_with_feeling(:contempt)
@@ -43,11 +43,11 @@ class EmotionsController < ApplicationController
               sadnessMonth,
               surpriseMonth
              ]
-    chartMonths = []
+    chartMonths_ave = []
     emotionMonths.each do |emotionMonth|
-      chartMonths << emotionMonth.inject(:+) / emotionMonth.length
+      chartMonths_ave << emotionMonth.inject(:+) / emotionMonth.length
     end
-    gon.chartMonths = chartMonths
+    gon.chartMonths_ave = chartMonths_ave
   end
 
   def show

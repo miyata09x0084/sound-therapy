@@ -10,7 +10,7 @@
         .result__pi-chart__visual
           %canvas#myChartWeek{:height => "100", :width => "400"}
           :javascript
-            if (gon.chartWeeks) {
+            if (gon.chartWeeks_ave) {
               draw_graphWeek()
             } else {
             };
@@ -19,7 +19,7 @@
         .result__pi-chart__visual
           %canvas#myChartMonth{:height => "100", :width => "400"}
             :javascript
-              if (gon.chartMonths) {
+              if (gon.chartMonths_ave) {
                 draw_graphMonth()
               } else {
               };
