@@ -9,8 +9,8 @@ class PlaylistsController < ApplicationController
     end
 
     @playlist = Playlist.new
-    @playlists = Playlist.all.order("created_at DESC")
-    @playlists_random = Playlist.all.order("RAND()")
+    @playlists = Playlist.all.order("created_at DESC").includes(:user)
+    @playlists_random = Playlist.all.order("RAND()").includes(:user)
   end
 
   def new
