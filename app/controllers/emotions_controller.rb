@@ -1,14 +1,14 @@
 class EmotionsController < ApplicationController
 
   def index
-    angerWeek = Emotion.with_weekly_data.search_with_id(current_user.id).search_with_feeling(:anger)
-    contemptWeek = Emotion.with_weekly_data.search_with_id(current_user.id).search_with_feeling(:contempt)
-    disgustWeek = Emotion.with_weekly_data.search_with_id(current_user.id).search_with_feeling(:disgust)
-    fearWeek = Emotion.with_weekly_data.search_with_id(current_user.id).search_with_feeling(:fear)
-    happinesstWeek = Emotion.with_weekly_data.search_with_id(current_user.id).search_with_feeling(:happiness)
-    neutralWeek = Emotion.with_weekly_data.search_with_id(current_user.id).search_with_feeling(:neutral)
-    sadnessWeek = Emotion.with_weekly_data.search_with_id(current_user.id).search_with_feeling(:sadness)
-    surpriseWeek = Emotion.with_weekly_data.search_with_id(current_user.id).search_with_feeling(:surprise)
+    angerWeek = current_user.emotions.with_weekly_data.search_with_feeling(:anger)
+    contemptWeek = current_user.emotions.with_weekly_data.search_with_feeling(:contempt)
+    disgustWeek = current_user.emotions.with_weekly_data.search_with_feeling(:disgust)
+    fearWeek = current_user.emotions.with_weekly_data.search_with_feeling(:fear)
+    happinesstWeek = current_user.emotions.with_weekly_data.search_with_feeling(:happiness)
+    neutralWeek = current_user.emotions.with_weekly_data.search_with_feeling(:neutral)
+    sadnessWeek = current_user.emotions.with_weekly_data.search_with_feeling(:sadness)
+    surpriseWeek = current_user.emotions.with_weekly_data.search_with_feeling(:surprise)
     emotionWeeks = [
              angerWeek,
              contemptWeek,
@@ -25,14 +25,14 @@ class EmotionsController < ApplicationController
     end
     gon.chartWeeks_ave = chartWeeks_ave
 
-    angerMonth = Emotion.with_monthly_data.search_with_id(current_user.id).search_with_feeling(:anger)
-    contemptMonth = Emotion.with_monthly_data.search_with_id(current_user.id).search_with_feeling(:contempt)
-    disgustMonth = Emotion.with_monthly_data.search_with_id(current_user.id).search_with_feeling(:disgust)
-    fearMonth = Emotion.with_monthly_data.search_with_id(current_user.id).search_with_feeling(:fear)
-    happinesstMonth = Emotion.with_monthly_data.search_with_id(current_user.id).search_with_feeling(:happiness)
-    neutralMonth = Emotion.with_monthly_data.search_with_id(current_user.id).search_with_feeling(:neutral)
-    sadnessMonth = Emotion.with_monthly_data.search_with_id(current_user.id).search_with_feeling(:sadness)
-    surpriseMonth = Emotion.with_monthly_data.search_with_id(current_user.id).search_with_feeling(:surprise)
+    angerMonth = current_user.emotions.with_monthly_data.search_with_feeling(:anger)
+    contemptMonth = current_user.emotions.with_monthly_data.search_with_feeling(:contempt)
+    disgustMonth = current_user.emotions.with_monthly_data.search_with_feeling(:disgust)
+    fearMonth = current_user.emotions.with_monthly_data.search_with_feeling(:fear)
+    happinesstMonth = current_user.emotions.with_monthly_data.search_with_feeling(:happiness)
+    neutralMonth = current_user.emotions.with_monthly_data.search_with_feeling(:neutral)
+    sadnessMonth = current_user.emotions.with_monthly_data.search_with_feeling(:sadness)
+    surpriseMonth = current_user.emotions.with_monthly_data.search_with_feeling(:surprise)
     emotionMonths = [
               angerMonth,
               contemptMonth,
