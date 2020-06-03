@@ -10,7 +10,6 @@ $(function(){
                     </div>
                   </a>
                   <div class="jackets__image__mood">
-                  
                   </div>
                   <div class="jackets__image__place">
                     Situation : ${playlist.name}

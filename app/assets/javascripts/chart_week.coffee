@@ -1,4 +1,4 @@
-window.draw_graphWeek = -> 
+window.draw_graphWeek = ->
     Chart.defaults.global.defaultFontColor = 'rgb(255,255,255)';
     ctxWeek = document.getElementById("myChartWeek").getContext('2d')
     myChartWeek = new Chart(ctxWeek, {
@@ -6,7 +6,7 @@ window.draw_graphWeek = ->
         data: {
             labels: ["Anger", "Contempt", "Disgust", "Fear", "Happiness", "Neutral", "Sadness", "Surprise"],
             datasets: [{
-                data: gon.chartData_week,
+                data: gon.chartWeeks_ave,
                 backgroundColor: [
                     'rgb(217,70,56)',
                     'rgb(235,139,47)',

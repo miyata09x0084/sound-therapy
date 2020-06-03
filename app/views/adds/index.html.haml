@@ -12,7 +12,7 @@
         %h2.main__header__info__listName
           = @playlist.name
         %h2.main__header__info__userName
-          Created by : 
+          Created by :
           = @playlist.user.name
         - if user_signed_in? && current_user.id == @playlist.user_id
           = link_to edit_playlist_path(@playlist) do
