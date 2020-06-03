@@ -15,6 +15,18 @@
       float: left;
       width: 50%;
     }
+    .account-page__inner--bottom {
+      .actions {
+        input {
+          padding: 15px;
+          background-color: #b74f01;
+          border: none;
+          font-size: 14px;
+          border-radius: 5px;
+        }
+      }
+    }
+
     &:after {
       clear: both;
       content: "";
@@ -59,7 +71,7 @@
       letter-spacing: 1px;
       font-size: 14px;
       font-weight: 200;
-      
+
       i {
         font-size: 11px;
       }
@@ -85,7 +97,7 @@
     border-radius: 2px;
     border-radius: 30px;
   }
-  
+
 
   input[type='submit'] {
     float: left;
