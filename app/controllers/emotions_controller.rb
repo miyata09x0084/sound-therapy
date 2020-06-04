@@ -72,7 +72,7 @@ class EmotionsController < ApplicationController
       })
 
       request = Net::HTTP::Post.new(uri.request_uri)
-      request['Ocp-Apim-Subscription-Key'] = '8d4223df7b0d48e69f3cc03263301344'
+      request['Ocp-Apim-Subscription-Key'] = ENV['KEY']
       request['Content-Type'] = 'application/json'
 
       imageUri = params[:url]
