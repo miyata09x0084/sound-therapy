@@ -26,6 +26,9 @@
       border-radius: 10px;
       display: inline-block;
       margin: 18px 14px 14px 0;
+      :hover {
+        opacity: 0.5;
+      }
       &__place {
         width: 136px;
         color: white;
@@ -54,6 +57,19 @@
           margin-left: 6px;
         }
       }
+      &__gift {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background-color: #008bf7;
+        margin-top: 10px;
+        i {
+          color: White;
+          position: relative;
+          top: 2.6px;
+          left: 4.6px;
+        }
+      }
       &__existing {
         img {
           width: 136px;
@@ -71,9 +87,6 @@
           font-size: 3.0em;
           color: rgb(164, 166, 168);
         }
-      }
-      :hover {
-        opacity: 0.5;
       }
     }
     &__image:nth-child(4n+2):last-child {
