@@ -46,7 +46,8 @@
             Situation :
             = playlist.name
           .jackets__image__gift
-            = icon('fas','gift')
+            = link_to mailforms_mailform_path(playlist) do
+              = icon('fas','gift')
   .playlist__content.deleteContent
     .title
       Recently Added
@@ -91,7 +92,8 @@
             Situation :
             = playlist.name
           .jackets__image__gift
-            = icon('fas','gift')
+            = link_to mailforms_mailform_path(playlist) do
+              = icon('fas','gift')
   .playlist__content.deleteContent
     .title
       My Feelings And Situations
@@ -137,4 +139,5 @@
               Situation :
               = playlist.name
             .jackets__image__gift
-              = icon('fas','gift')
+              = link_to mailforms_mailform_path(playlist) do
+                = icon('fas','gift')

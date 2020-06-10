@@ -5,10 +5,8 @@ class MailformMailer < ApplicationMailer
   #
   #   en.mailform_mailer.mailform.subject
   #
-  def mailform
-    @greeting = "Hi"
-
-    mail(from: 'miyata09x0084@gmail.com', to: 'miyata09x0084@gmail.com' , subject: 'テストでーす')
+  def mailform(post_data)
+    mail(from: 'miyata09x0084@gmail.com', to: post_data , subject: 'Try out Sound-therapy')
   end
 end
 

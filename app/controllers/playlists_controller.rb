@@ -38,9 +38,6 @@ class PlaylistsController < ApplicationController
   def update
     playlist = Playlist.find(params[:id])
     playlist.update(playlist_params)
-
-    MailformMailer.mailform.deliver_now
-
     redirect_to playlist_adds_path(playlist)
   end
 

@@ -11,8 +11,8 @@ class EmotionsController < ApplicationController
     surpriseWeek = current_user.emotions.with_weekly_data.average(:surprise)
     emotionWeeks_ave = [
              angerWeek,
-             contemptWeek,
              disgustWeek,
+             contemptWeek,
              fearWeek,
              happinesstWeek,
              neutralWeek,
