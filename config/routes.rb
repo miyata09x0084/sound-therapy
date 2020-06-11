@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :playlists do
     resources :adds, only: [:index, :create, :destroy]
   end
+  match 'mailforms/mailform' => 'mailforms#mailform', :via => [:get, :post]
+  match 'mailforms/mailform_confirm' => 'mailforms#mailform_confirm', :via => [:get, :post]
 end

@@ -1,0 +1,11 @@
+.wrapper-api
+  .api-form
+    .gift-picture
+    %h1.api-form__title
+      Share playlist with a friends and help them get better, less stress.
+    = form_tag mailforms_mailform_confirm_path do
+      .api-form__url
+        %h2.api-form__url__title
+          To :
+      = text_field_tag :email, "", class: "api-form__url__input", placeholder: "to@example.com"
+      = submit_tag "SEND", class: "api-form__url__action-btn"

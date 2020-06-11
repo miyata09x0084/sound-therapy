@@ -26,3 +26,5 @@ services:
       - .:/workdir
     environment:
       - KEY
+      - EMAIL_ADDRESS
+      - EMAIL_PASSWORD
