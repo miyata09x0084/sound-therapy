@@ -6,7 +6,7 @@ class MailformMailer < ApplicationMailer
   #   en.mailform_mailer.mailform.subject
   #
   def mailform(post_data)
-    mail(from: 'miyata09x0084@gmail.com', to: post_data , subject: 'Try out Sound-therapy')
+    mail(from: post_data['from_email'], to: post_data['to_email'] , subject: 'Try out Sound therapy')
   end
 end
 
