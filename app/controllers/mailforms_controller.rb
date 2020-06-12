@@ -4,15 +4,22 @@ class MailformsController < ApplicationController
   end
 
   def mailform_confirm(post_data=Hash.new)
-    post_data['to_email'] = params[:email]
-    post_data['from_email'] = current_user.email
 
-    if post_data['to_email'].present? && post_data['from_email'].present?
-      MailformMailer.mailform(post_data).deliver
-      redirect_to root_path, notice: "Sended successfully."
+    if user_signed_in?
+
+      if params[:email].present?
+        post_data['to_email'] = params[:email]
+        post_data['from_email'] = current_user.email
+
+        MailformMailer.mailform(post_data).deliver
+        redirect_to root_path, notice: "Sended successfully."
+      else
+        flash.now[:alert] = "You need to enter a email address."
+        render mailforms_mailform_path
+      end
+
     else
-      flash.now[:alert] = "You need to enter a email address."
-      render mailforms_mailform_path
+      redirect_to new_user_session_path, alert: "You need to sign in or sign up before continuing."
     end
 
   end

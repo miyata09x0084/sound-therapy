@@ -40,10 +40,10 @@ Rails.application.configure do
     user_name:            ENV['EMAIL_ADDRESS'],
     password:             ENV['EMAIL_PASSWORD'],
     authentication:       'login',
-    enable_starttls_auto: true
+    # enable_starttls_auto: true
   }
 
-  config.action_mailer.perform_caching = false
+  # config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
