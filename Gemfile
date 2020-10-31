@@ -92,6 +92,8 @@ gem 'rubocop-faker'
 
 gem 'dotenv-rails'
 
+gem 'google-analytics-rails'
+
 group :production do
   gem 'unicorn', '5.4.1'
 end
