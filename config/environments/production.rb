@@ -1,5 +1,7 @@
 Rails.application.configure do
 
+  GA.tracker = "G-T8C524K7MF"
+
   config.assets.compile = true
   config.assets.initialize_on_precompile=false
   # Settings specified here will take precedence over those in config/application.rb.
